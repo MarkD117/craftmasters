@@ -29,7 +29,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-markd117-craftmasters-ykseg96n1yw.ws-eu106.gitpod.io']
+ALLOWED_HOSTS = ['8000-markd117-craftmasters-ykseg96n1yw.ws-eu106.gitpod.io',
+                 'mastercrafters-2d1ca4d6cb24.herokuapp.com']
 
 
 # Application definition
