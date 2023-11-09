@@ -21,13 +21,13 @@ class Project(models.Model):
     title_image = CloudinaryField('image', default='placeholder')
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="project_posts"
+        User, on_delete=models.CASCADE, related_name='project_posts'
         )
     # Gets categories from category model. Sets default value if
     # assigned category gets deleted
     category = models.ForeignKey(
         Category, on_delete=models.SET_DEFAULT, default='uncategorized',
-        related_name="project_categories"
+        related_name='project_categories'
     )
     description = models.TextField(blank=True)
     content = models.TextField()
@@ -41,7 +41,7 @@ class Project(models.Model):
     class Meta:
         # order our posts with the created_on field in 
         # descending order. newest posts listed 1st
-        ordering = ["-created_on"]
+        ordering = ['-created_on']
 
     # returns string representation of an object
     def __str__(self):
@@ -54,7 +54,7 @@ class Project(models.Model):
 
 class Comment(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE,
-                             related_name="comments")
+                             related_name='comments')
     name = models.CharField(max_length=100)
     email = models.EmailField()
     body = models.TextField()
@@ -65,7 +65,7 @@ class Comment(models.Model):
     class Meta:
         # order comments with the created_on field in 
         # ascending order. Oldest comments listed 1st
-        ordering = ["created_on"]
+        ordering = ['created_on']
 
     def __str__(self):
-        return f"Comment {self.body} by {self.name}"
+        return f'Comment {self.body} by {self.name}'
