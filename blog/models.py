@@ -2,7 +2,19 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
+
+class Category(models.Model):
+    category_name = models.CharField(max_length=25)
+
+    class Meta:
+        # Correcting plural name in admin panel
+        verbose_name_plural = "Categories"
+    
+    def __str__(self):
+        return self.category_name
+
 STATUS = ((0, 'Draft'), (1, 'Published'))
+
 
 class Project(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -11,7 +23,12 @@ class Project(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="project_posts"
         )
-    category = models.CharField(max_length=25, default='uncategorized')
+    # Gets categories from category model. Sets default value if
+    # assigned category gets deleted
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_DEFAULT, default='uncategorized',
+        related_name="project_categories"
+    )
     description = models.TextField(blank=True)
     content = models.TextField()
     project_images = CloudinaryField('image', default='placeholder') 
@@ -52,14 +69,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-
-
-class Category(models.Model):
-    category_name = models.CharField(max_length=25)
-
-    class Meta:
-        # Correcting plural name in admin panel
-        verbose_name_plural = "Categories"
-    
-    def __str__(self):
-        return self.name
