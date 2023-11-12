@@ -35,16 +35,16 @@
                         <a class="nav-link" href="#">Projects</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Logout</a>
+                        </li>
                     {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
                     {% endif %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -55,9 +55,9 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <!-- Lists all categories except uncategorized -->
                             {% for category in categories %}
-                            {% if category.category_name != 'uncategorized' %}
-                            <li><a class="dropdown-item" href="#">{{ category.category_name }}</a></li>
-                            {% endif %}
+                                {% if category.category_name != 'uncategorized' %}
+                                    <li><a class="dropdown-item" href="#">{{ category.category_name }}</a></li>
+                                {% endif %}
                             {% endfor %}
                         </ul>
                     </li>
@@ -101,11 +101,20 @@
                                 <a class="footer-link" aria-label="home" aria-current="page" href="#">Home</a>
                             </li>
                             <li class="nav-item mb-3">
-                                <a class="footer-link" aria-label="projects" aria-current="page"
-                                    href="#">Projects</a>
+                                <a class="footer-link" aria-label="projects" aria-current="page" href="#">Projects</a>
                             </li>
-                            <li class="nav-item mb-3">
-                                <a class="footer-link" aria-label="categories" aria-current="page" href="#">Categories</a>
+                            <li class="nav-item dropdown mb-3">
+                                <a class="footer-link dropdown-toggle" href="#" id="footerDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categories
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="footerDropdown">
+                                    {% for category in categories %}
+                                        {% if category.category_name != 'uncategorized' %}
+                                            <li><a class="dropdown-item" href="#">{{ category.category_name }}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
                             </li>
                         </ul>
                     </div>
