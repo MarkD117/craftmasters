@@ -20,3 +20,10 @@ class ProjectList(generic.ListView):
     template_name = 'projects.html'
     # if there are more than 6 projects, page navigation will be added
     paginate_by = 6
+
+    # overriding 'get_context_data' method
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # adding categories to context for access in template
+        context['categories'] = Category.objects.all()
+        return context
