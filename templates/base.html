@@ -29,10 +29,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
+                        <a class="nav-link" href="{% url 'projects' %}">Projects</a>
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item">
@@ -98,10 +98,10 @@
                         <h5 class="text-uppercase mb-4 pb-1">Helpful Links</h5>
                         <ul class="fa-ul">
                             <li class="nav-item mb-3">
-                                <a class="footer-link" aria-label="home" aria-current="page" href="#">Home</a>
+                                <a class="footer-link" aria-label="home" aria-current="page" href="{% url 'home' %}">Home</a>
                             </li>
                             <li class="nav-item mb-3">
-                                <a class="footer-link" aria-label="projects" aria-current="page" href="#">Projects</a>
+                                <a class="footer-link" aria-label="projects" aria-current="page" href="{% url 'projects' %}">Projects</a>
                             </li>
                             <li class="nav-item dropdown mb-3">
                                 <a class="footer-link dropdown-toggle" href="#" id="footerDropdown" role="button"
