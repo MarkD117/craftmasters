@@ -170,3 +170,27 @@ ul.fa-ul{
 .page-link {
     color: #d12600;
 }
+
+/* ----- Media Queries ----- */
+@media (max-width: 1300px) {
+    .project-image-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .project-image-container {
+        height: 300px;
+    }
+}
+
+@media (max-width: 900px) {
+    .project-image-container {
+        height: 200px;
+    }
+
+    .like-counter {
+        margin-left: 0;
+    }
+    
+}
