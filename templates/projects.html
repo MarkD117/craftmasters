@@ -26,7 +26,7 @@
                                 </div>
                             </div>
                             <!-- url allows users to open specific post in the detailed post view -->
-                            <a href="#" class="project-link">
+                            <a href="{% url 'project_detail' project.slug %}" class="project-link">
                                 <h2 class="card-title project-title">{{ project.title }}</h2>
                                 <p class="card-text project-description">{{ project.description }}</p>
                             </a>
@@ -36,7 +36,7 @@
                                     {{ project.created_on|date:"F d Y" }}
                                     <i class="far fa-heart like-counter"></i> {{ project.number_of_likes }}
                                 </span>
-                                <a href="#" class="project-link read-article"><span>Read Article &#8594;</span></a>
+                                <a href="{% url 'project_detail' project.slug %}" class="project-link read-article"><span>Read Article &#8594;</span></a>
                             </p>
 
                         </div>
