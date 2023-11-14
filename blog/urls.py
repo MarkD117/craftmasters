@@ -4,5 +4,9 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.LandingPage.as_view(), name='home'),
-    path('projects/', views.ProjectList.as_view(), name='projects')
+    path('projects/', views.ProjectList.as_view(), name='projects'),
+    # Django path converters
+    # 'slug' keyword name matches 'slug' parameter in get 
+    # method of ProjectDetail class in blog/views.py file.
+    path('projects/<slug:slug>/', views.ProjectDetail.as_view(), name='project_detail'),
 ]
