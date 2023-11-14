@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Project title banner -->
+<div class="project-banner">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 project-banner-text">
+                <h1 class="post-title">{{ project.title }}</h1>
+                <p class="post-subtitle">By {{ project.author }} | {{ project.created_on|date:"F d Y" }}</p>
+            </div>
+            <div class="d-md-block col-md-6 project-banner-image">
+                {% if "placeholder" in project.title_image.url %}
+                <img src="{% static 'images/project-placeholder.jpeg' %}" width="100%">
+                {% else %}
+                <img src="{{ project.title_image.url }}" width="100%">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- project content conatiner -->
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left  top">
+            <div class="card-body">
+                <p class="card-text ">
+                    <!-- safe filter used to prevent malicious content -->
+                    {{ project.content | safe }}
+                </p>
+                <div class="row">
+                    <div class="col-1">
+                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ project.number_of_likes }}
+                        </strong>
+                    </div>
+                    <div class="col-1">
+                        {% with comments.count as total_comments %}
+                        <strong class="text-secondary"><i class="far fa-comments"></i>
+                            {{ total_comments }}</strong>
+                        {% endwith %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Row dividing content and comments -->
+    <div class="row">
+        <div class="col">
+            <hr>
+        </div>
+    </div>
+    <!-- Comments row -->
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <h3>Comments:</h3>
+            <div class="card-body">
+                <!-- If there are no comments -->
+                {% if not project.comments.all %}
+                <p class="text-muted"> This post doesn't have any comments yet! Be the first to add one!</p>
+                {% else %}
+                {% for comment in comments %}
+                <div class="comments" style="padding: 10px;">
+                    <p class="fw-bold">
+                        {{ comment.name }}
+                        <span class="fw-normal">
+                            - {{ comment.created_on | timesince }} ago
+                        </span>
+                    </p>
+                    {{ comment.body | linebreaks }}
+                </div>
+                <hr>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="col-md-4 card mb-4  mt-3 ">
+            <div class="card-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
