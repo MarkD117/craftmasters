@@ -10,10 +10,10 @@
     <h1 class="centered-main-title">Craft Masters</h1>
 </div>
 
-<div class="container about text-center">
+<div class="container pt-4 about text-center">
     <h2 class="heading-space">About Us</h2>
-    <hr class="about-hr">
-    <p class="about-text">
+    <hr class="home-hr">
+    <p class="pt-4">
         "Welcome to Craft Masters, a digital haven for woodworking enthusiasts and artisans alike! Dive into a world
         where creativity meets craftsmanship, and share your passion for wooden wonders. Whether you're a seasoned
         woodworker or just starting your journey, Craft Masters is the perfect platform to showcase and celebrate the
@@ -22,6 +22,52 @@
         Masters - where every project tells a unique story in wood."
     </p>
 </div>
+<br>
+<!-- Latest Projects -->
+<div class="container">
+    <h2 class="heading-space text-center">Latest Projects</h2>
+    <hr class="home-hr">
+    <p class="py-4 text-center">
+        Take a look at some of our newest posts! Head to the <a class="text-decoration-none" href="{% url 'projects' %}">Projects</a> page to view more!
+    </p>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        {% for project in object_list %}
+        <div class="col">
+            <div class="card">
+                <div class="project-image-container">
+                    <!-- Shows default image if there is no image available -->
+                    {% if "placeholder" in project.title_image.url %}
+                    <img class="card-img-top project-card-image-top"
+                        src="{% static 'images/project-placeholder.jpeg' %}">
+                    {% else %}
+                    <img class="card-img-top project-card-image-top" src=" {{ project.title_image.url }}">
+                    {% endif %}
+                    <div class="author-label">
+                        <p class="author">Author: {{ project.author }}</p>
+                    </div>
+                </div>
+                <!-- url allows users to open specific post in the detailed post view -->
+                <a href="{% url 'project_detail' project.slug %}" class="project-link">
+                    <h2 class="card-title project-title">{{ project.title }}</h2>
+                    <p class="card-text project-description">{{ project.description }}</p>
+                </a>
+                <br>
+                <p class="card-text text-muted h6 project-info">
+                    <span class="mt-2">
+                        {{ project.created_on|date:"F d Y" }}
+                        <i class="far fa-heart like-counter"></i> {{ project.number_of_likes }}
+                    </span>
+                    <a href="{% url 'project_detail' project.slug %}"
+                        class="project-link read-article read-article-home"><span>Read
+                            Article &#8594;</span></a>
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<br>
 
 
 {% endblock %}
