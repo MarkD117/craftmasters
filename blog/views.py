@@ -3,16 +3,18 @@ from django.views import generic, View
 from .models import Category, Project
 
 
-class LandingPage(View):
-    # Specifying the template name
+class LandingPage(generic.ListView):
+    model = Project
+    # Retrieves latest 4 projects in database
+    queryset = Project.objects.filter(status=1).order_by('-created_on')[:4]  
     template_name = 'index.html'
 
-    def get(self, request, *args, **kwargs):
-        # getting all categories
-        categories = Category.objects.all()
-        # passing categories as context to the template
-        context = {'categories': categories}
-        return render(request, self.template_name, context)
+    # overriding 'get_context_data' method
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # adding categories to context for access in template
+        context['categories'] = Category.objects.all()
+        return context
 
 
 class ProjectList(generic.ListView):
@@ -23,10 +25,8 @@ class ProjectList(generic.ListView):
     # if there are more than 6 projects, page navigation will be added
     paginate_by = 6
 
-    # overriding 'get_context_data' method
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # adding categories to context for access in template
         context['categories'] = Category.objects.all()
         return context
 
