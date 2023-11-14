@@ -38,18 +38,9 @@
     margin: 15px 0 20px 0;
 }
 
-.about{
-    padding: 15px;
-    width: 50%;
-}
-
-.about-hr{
+.home-hr{
     margin: auto;
     width: 60%;
-}
-
-.about-text{
-    padding-top: 20px;
 }
 
 /* footer */
@@ -219,6 +210,16 @@ ul.fa-ul{
 
 
 /* ----- Media Queries ----- */
+
+@media (min-width: 1400px) {
+    .read-article-home {
+        margin-left: 5.2px;
+    }
+
+    .about{
+        width: 50%;
+    }
+}
 
 @media (max-width: 1300px) {
     .project-image-container {
