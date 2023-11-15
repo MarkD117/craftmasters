@@ -66,13 +66,14 @@ footer{
     display: contents;
 }
 
-.footer-container{
-    border-top: solid 1px rgba(0,0,0,0.2);
+.footer-bg {
+    background-color: #252525;
+    color: #e8e8e8;
 }
 
 .footer-link{
     text-decoration: none;
-    color: black;
+    color: #e8e8e8;
 }
 
 .footer-social-links{
@@ -85,17 +86,17 @@ ul.fa-ul{
     margin-left: 0;
 }
 
-.light-grey-text, li > p {
+/* .light-grey-text, li > p {
     color: #4c4e52;
-}
+} */
 
 .open-hours{
-    color: black;
+    color: e8e8e8;
     font-weight: 600;
 }
 
 .footer-copyright{
-    color: #d3d3d3;
+    color: #e8e8e8;
     max-width: 100%;
 }
 
