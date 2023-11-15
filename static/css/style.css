@@ -4,6 +4,12 @@
     border: none;
 }
 
+/* ----- nav bar ----- */
+
+.nav-bg {
+    background-color: #252525;
+}
+
 /* ----- hero image ----- */
 
 .image-container{
