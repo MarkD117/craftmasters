@@ -42,8 +42,8 @@
                     {% else %}
                     <img class="card-img-top project-card-image-top" src=" {{ project.title_image.url }}">
                     {% endif %}
-                    <div class="author-label">
-                        <p class="author">Author: {{ project.author }}</p>
+                    <div class="new-label rounded">
+                        <p class="new-text text-center">NEW</p>
                     </div>
                 </div>
                 <!-- url allows users to open specific post in the detailed post view -->
@@ -51,7 +51,9 @@
                     <h2 class="card-title project-title">{{ project.title }}</h2>
                     <p class="card-text project-description">{{ project.description }}</p>
                 </a>
-                <br>
+                <p class="mb-0 ms-2 mt-1">
+                    By {{ project.author }}
+                </p>
                 <p class="card-text text-muted h6 project-info">
                     <span class="mt-2">
                         {{ project.created_on|date:"F d Y" }}
