@@ -275,9 +275,23 @@ ul.fa-ul{
     background-size: cover;
 }
 
+
+form.signup > p > input,
+form.login > p > input {
+    border: 1px solid #3a3a3aa6;
+    border-radius: 3px;
+    padding: 2px;
+    margin-top: 3px;
+    width: 300px;
+}
+
+#id_remember {
+    width: 20px;
+}
+
 /* Add semi-transparent bg to form */
-.login-bg,
-.logout-bg {
+
+.auth-bg {
     max-width: 40%;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -297,9 +311,15 @@ ul.fa-ul{
     border: 1px solid #f26749;
 }
 
-.signup-link {
+.auth-link {
     color: #f26749;
     text-decoration: none;
+}
+
+.auth-link:hover,
+.auth-link:active {
+    color: #d12600;
+    text-decoration: underline;
 }
 
 /* ----- Media Queries ----- */
@@ -315,8 +335,7 @@ ul.fa-ul{
 }
 
 @media (max-width: 1400px) {
-    .login-bg,
-    .logout-bg {
+    .auth-bg {
         max-width: 50%;
     }
 }
@@ -326,8 +345,7 @@ ul.fa-ul{
         height: 350px;
     }
 
-    .login-bg,
-    .logout-bg {
+    .auth-bg {
         max-width: 60%;
     }
 }
@@ -341,8 +359,7 @@ ul.fa-ul{
         height: 200px;
     }
 
-    .login-bg,
-    .logout-bg {
+    .auth-bg {
         max-width: 70%;
     }
     
@@ -357,11 +374,9 @@ ul.fa-ul{
         margin-left: 0;
     }
 
-    .login-bg,
-    .logout-bg {
+    .auth-bg {
         max-width: 80%;
     }
-    
 }
 
 @media (max-width: 767px) {
@@ -381,8 +396,7 @@ ul.fa-ul{
         margin-top: 15%;
     }
 
-    .login-bg,
-    .logout-bg {
+    .auth-bg {
         max-width: 85%;
     }
     
@@ -392,6 +406,14 @@ ul.fa-ul{
 
     .project-banner {
         height: 400px;
+    }
+    
+}
+
+@media (max-width: 375px) {
+
+    p > input {
+        width: 250px;
     }
     
 }
