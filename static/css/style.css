@@ -267,20 +267,22 @@ ul.fa-ul{
     color: lightgray;
 }
 
-/* ----- login page ----- */
+/* ----- Auth pages ----- */
 
 
-.login-page-bg {
+.auth-bg-img {
     background: url('/static/images/login-bg-img.jpg') center center fixed;
     background-size: cover;
 }
 
-.login-bg {
+/* Add semi-transparent bg to form */
+.login-bg,
+.logout-bg {
     max-width: 40%;
-    background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background to the form */
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Add a subtle box shadow for contrast */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .signup-btn {
@@ -313,7 +315,8 @@ ul.fa-ul{
 }
 
 @media (max-width: 1400px) {
-    .login-bg {
+    .login-bg,
+    .logout-bg {
         max-width: 50%;
     }
 }
@@ -323,7 +326,8 @@ ul.fa-ul{
         height: 350px;
     }
 
-    .login-bg {
+    .login-bg,
+    .logout-bg {
         max-width: 60%;
     }
 }
@@ -337,7 +341,8 @@ ul.fa-ul{
         height: 200px;
     }
 
-    .login-bg {
+    .login-bg,
+    .logout-bg {
         max-width: 70%;
     }
     
@@ -352,7 +357,8 @@ ul.fa-ul{
         margin-left: 0;
     }
 
-    .login-bg {
+    .login-bg,
+    .logout-bg {
         max-width: 80%;
     }
     
@@ -375,7 +381,8 @@ ul.fa-ul{
         margin-top: 15%;
     }
 
-    .login-bg {
+    .login-bg,
+    .logout-bg {
         max-width: 85%;
     }
     
