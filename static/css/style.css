@@ -182,6 +182,24 @@ ul.fa-ul{
     color: #d12600;
 }
 
+.page-btn {
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    background-color: white;
+    color: #f26749;
+    border: 1px solid #f26749;
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+  .page-btn:hover {
+    background-color: #f26749;
+    color: white;
+    text-decoration: none;
+  }
+
 /* ----- project detail page ----- */
 
 .project-banner {
