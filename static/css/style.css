@@ -4,6 +4,16 @@
     border: none;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
 /* ----- nav bar ----- */
 
 .nav-bg {
@@ -257,6 +267,38 @@ ul.fa-ul{
     color: lightgray;
 }
 
+/* ----- login page ----- */
+
+
+.login-page-bg {
+    background: url('/static/images/login-bg-img.jpg') center center fixed;
+    background-size: cover;
+}
+
+.login-bg {
+    max-width: 40%;
+    background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background to the form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Add a subtle box shadow for contrast */
+}
+
+.signup-btn {
+    background-color: #f26749;
+    color: #fff;
+}
+
+.signup-btn:hover,
+.signup-btn:active {
+    background-color: #fff;
+    color: #f26749;
+    border: 1px solid #f26749;
+}
+
+.signup-link {
+    color: #f26749;
+    text-decoration: none;
+}
 
 /* ----- Media Queries ----- */
 
@@ -270,9 +312,19 @@ ul.fa-ul{
     }
 }
 
+@media (max-width: 1400px) {
+    .login-bg {
+        max-width: 50%;
+    }
+}
+
 @media (max-width: 1300px) {
     .project-image-container {
         height: 350px;
+    }
+
+    .login-bg {
+        max-width: 60%;
     }
 }
 
@@ -284,6 +336,10 @@ ul.fa-ul{
     .project-banner {
         height: 200px;
     }
+
+    .login-bg {
+        max-width: 70%;
+    }
     
 }
 
@@ -294,6 +350,10 @@ ul.fa-ul{
 
     .like-counter {
         margin-left: 0;
+    }
+
+    .login-bg {
+        max-width: 80%;
     }
     
 }
@@ -313,6 +373,10 @@ ul.fa-ul{
 
     .post-title {
         margin-top: 15%;
+    }
+
+    .login-bg {
+        max-width: 85%;
     }
     
 }
