@@ -10,6 +10,17 @@
     background-color: #252525;
 }
 
+.search-btn {
+    background-color: #252525;
+    color: #f26749;
+    border: 1px solid #f26749;
+  }
+  
+  .search-btn:hover {
+    background-color: #f26749;
+    color: white;
+  }
+
 /* ----- hero image ----- */
 
 .image-container{
