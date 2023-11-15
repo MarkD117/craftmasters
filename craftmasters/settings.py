@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'blog',
 ]
 
+# User registration allows email field to be empty
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
