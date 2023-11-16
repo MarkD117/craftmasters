@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 <!-- Project title banner -->
 <div class="project-banner">
@@ -75,9 +76,17 @@
             </div>
             {% endif %}
         </div>
-        <div class="col-md-4 card mb-4  mt-3 ">
+        <div class="col-md-4 card mb-4 mt-3 ">
             <div class="card-body">
-
+                {% if user.is_authenticated %}
+                <h3>Leave a comment:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 20px;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn signup-btn mt-3 btn-lg">Submit</button>
+                </form>
+                {% endif %}
             </div>
         </div>
     </div>
