@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Category, Project
+from .forms import CommentForm
 
 
 class LandingPage(generic.ListView):
@@ -60,6 +61,7 @@ class ProjectDetail(View):
                 'comments': comments,
                 'commented': False,
                 'liked': liked,
+                'comment_form': CommentForm(),
                 'categories': categories,
             },
         )
