@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from .models import Category, Project
 from .forms import CommentForm
 
@@ -104,3 +105,19 @@ class ProjectDetail(View):
                 'comment_form': CommentForm()
             },
         )
+
+class ProjectLike(View):
+    
+    def post(self, request, slug):
+        project = get_object_or_404(Project, slug=slug)
+
+        # checking to see if the project has already been liked
+        if project.likes.filter(id=request.user.id).exists():
+            # Removes like
+            project.likes.remove(request.user)
+        else:
+            # add like if it does not exists
+            project.likes.add(request.user)
+
+        # liking or unliking a project will reload the project_detail page and update the like
+        return HttpResponseRedirect(reverse('project_detail', args=[slug]))
