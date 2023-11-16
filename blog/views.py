@@ -12,6 +12,15 @@ class LandingPage(generic.ListView):
     template_name = 'index.html'
 
 
+class CategoryPage(View):
+    def get(self, request, cat_name, *args, **kwargs):
+        # Getting Category object based on the category name
+        category = get_object_or_404(Category, category_name=cat_name)
+        # Filter projects based on category
+        project_category = Project.objects.filter(category=category)
+        return render(request, 'categories.html', {'cat_name': cat_name, 'project_category': project_category})
+
+
 class ProjectList(generic.ListView):
     model = Project
     # queryset contains projects that have been published in descending order

@@ -10,4 +10,5 @@ urlpatterns = [
     # method of ProjectDetail class in blog/views.py file.
     path('projects/<slug:slug>/', views.ProjectDetail.as_view(), name='project_detail'),
     path('like/<slug:slug>/', views.ProjectLike.as_view(), name='project_like'),
+    path('category/<str:cat_name>/', views.CategoryPage.as_view(), name='category'),
 ]
