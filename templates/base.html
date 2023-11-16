@@ -56,7 +56,7 @@
                             <!-- Lists all categories except uncategorized -->
                             {% for category in categories %}
                                 {% if category.category_name != 'uncategorized' %}
-                                    <li><a class="dropdown-item" href="#">{{ category.category_name }}</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'category' category.category_name %}">{{ category.category_name }}</a></li>
                                 {% endif %}
                             {% endfor %}
                         </ul>
@@ -111,7 +111,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="footerDropdown">
                                     {% for category in categories %}
                                         {% if category.category_name != 'uncategorized' %}
-                                            <li><a class="dropdown-item" href="#">{{ category.category_name }}</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'category' category.category_name %}">{{ category.category_name }}</a></li>
                                         {% endif %}
                                     {% endfor %}
                                 </ul>
