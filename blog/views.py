@@ -11,13 +11,6 @@ class LandingPage(generic.ListView):
     queryset = Project.objects.filter(status=1).order_by('-created_on')[:4]  
     template_name = 'index.html'
 
-    # overriding 'get_context_data' method
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # adding categories to context for access in template
-        context['categories'] = Category.objects.all()
-        return context
-
 
 class ProjectList(generic.ListView):
     model = Project
@@ -26,11 +19,6 @@ class ProjectList(generic.ListView):
     template_name = 'projects.html'
     # if there are more than 6 projects, page navigation will be added
     paginate_by = 6
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['categories'] = Category.objects.all()
-        return context
 
 
 class ProjectDetail(View):
@@ -46,9 +34,6 @@ class ProjectDetail(View):
         # the project, the liked value will be set to True
         if project.likes.filter(id=self.request.user.id).exists():
             liked = True
-        
-        # Gets categories to access in template
-        categories = Category.objects.all()
 
         # Sending all information to the render method
         return render(
@@ -63,7 +48,6 @@ class ProjectDetail(View):
                 'commented': False,
                 'liked': liked,
                 'comment_form': CommentForm(),
-                'categories': categories,
             },
         )
     
