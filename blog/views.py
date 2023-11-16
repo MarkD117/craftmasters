@@ -65,3 +65,42 @@ class ProjectDetail(View):
                 'categories': categories,
             },
         )
+    
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Project.objects.filter(status=1)
+        project = get_object_or_404(queryset, slug=slug)
+        comments = project.comments.filter(approved=True).order_by('created_on')
+        liked = False
+        if project.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
+        # Gets all of the data from the comment form
+        comment_form = CommentForm(data=request.POST)
+
+        # is.valid() checks if information 
+        # has been submitted to the form.
+        if comment_form.is_valid():
+            # sets email and username automatically
+            comment_form.instance.email = request.user.email
+            comment_form.instance.name = request.user.username
+            # saves comment but does not commit 
+            # until a post is assigned to it.
+            comment = comment_form.save(commit=False)
+            comment.project = project
+            comment.save()
+        else:
+            # if the comment form is not valid, an
+            # empty comment form instance is returned.
+            comment_form = CommentForm()
+
+        return render(
+            request,
+            'project_detail.html',
+            {
+                'project': project,
+                'comments': comments,
+                'commented': True,
+                'liked': liked,
+                'comment_form': CommentForm()
+            },
+        )
