@@ -267,6 +267,19 @@ ul.fa-ul{
     color: lightgray;
 }
 
+.like-btn {
+    color: #E84610;
+    border: none;
+    background: transparent;
+}
+
+.like-btn:hover,
+.like-btn:active {
+    color: #E84610;
+    background: transparent;
+    border: none;
+}
+
 /* ----- Auth pages ----- */
 
 

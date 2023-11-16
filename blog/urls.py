@@ -9,4 +9,5 @@ urlpatterns = [
     # 'slug' keyword name matches 'slug' parameter in get 
     # method of ProjectDetail class in blog/views.py file.
     path('projects/<slug:slug>/', views.ProjectDetail.as_view(), name='project_detail'),
+    path('like/<slug:slug>/', views.ProjectLike.as_view(), name='project_like'),
 ]

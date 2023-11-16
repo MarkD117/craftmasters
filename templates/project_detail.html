@@ -33,7 +33,23 @@
                 </p>
                 <div class="row">
                     <div class="col-1">
-                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ project.number_of_likes }}
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'project_like' project.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="blogpost_id" value="{{project.slug}}" class="like-btn"><i
+                                        class="fas fa-heart"></i></button>
+                                {% else %}
+                                <button type="submit" name="blogpost_id" value="{{project.slug}}" class="like-btn"><i
+                                        class="far fa-heart"></i></button>
+                                {% endif %}
+                            </form>
+                            <!-- refers to if user is authenticated if statement -->
+                            {% else %}
+                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            {% endif %}
+                            <span class="text-secondary"> {{ project.number_of_likes }}</span>
                         </strong>
                     </div>
                     <div class="col-1">
