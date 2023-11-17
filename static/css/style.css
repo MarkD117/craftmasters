@@ -363,6 +363,12 @@ form.login > p > input {
     }
 }
 
+@media (max-width: 1034px) {
+    form.login > p > input {
+        width: 70%;
+    }
+}
+
 @media (max-width: 990px) {
     .project-image-container {
         height: 300px;
@@ -412,6 +418,14 @@ form.login > p > input {
     .auth-bg {
         max-width: 85%;
     }
+
+    form.signup > p > input {
+        width: 100%;
+    }
+
+    form.login > p > input {
+        width: 60%;
+    }
     
 }
 
@@ -422,11 +436,11 @@ form.login > p > input {
     }
     
 }
-
+/* 
 @media (max-width: 375px) {
 
     p > input {
         width: 250px;
     }
     
-}
+} */
