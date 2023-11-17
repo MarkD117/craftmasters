@@ -167,13 +167,19 @@ ul.fa-ul{
 }
 
 /* Minimising display of description text */
-/* Utilises vertical scrollbar upon content overflow */
 .project-description {
     margin-left: 10px;
     max-height: 72px;
-    white-space: normal;
-    line-height: 24px;
-    overflow-y: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* Utilises vertical scrollbar upon content overflow */
+.project-description.scroll {
+    overflow: auto;
 }
 
 .project-info {

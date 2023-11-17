@@ -28,7 +28,7 @@
                             <!-- url allows users to open specific post in the detailed post view -->
                             <a href="{% url 'project_detail' project.slug %}" class="project-link">
                                 <h2 class="card-title project-title">{{ project.title }}</h2>
-                                <p class="card-text project-description">{{ project.description }}</p>
+                                <p class="card-text project-description scroll">{{ project.description }}</p>
                             </a>
                             <br>
                             <p class="card-text text-muted h6 project-info">
