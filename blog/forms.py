@@ -1,5 +1,7 @@
-from .models import Comment
+from .models import Comment, Project, Category
 from django import forms
+from django.utils.text import slugify
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 
 class CommentForm(forms.ModelForm):
@@ -9,3 +11,33 @@ class CommentForm(forms.ModelForm):
         # trailing comma is neccessary for python 
         # to interpret as a tuple not a string
         fields = ('body',)
+
+
+class AddProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        exclude = ['slug', 'author', 'project_images', 'likes']
+        widgets = {
+            'content': SummernoteWidget(),
+        }
+
+    def __init__(self, *args, **kwargs):
+        # Getting the user interacting with form
+        self.user = kwargs.pop('user', None)
+        # Ensuring form is initialised properly
+        super(AddProjectForm, self).__init__(*args, **kwargs)
+
+        # Exclude 'uncategorized' category from the queryset
+        uncategorized_category = Category.objects.get(category_name='uncategorized')
+        self.fields['category'].queryset = Category.objects.exclude(id=uncategorized_category.id)
+
+    # Overriding save method to include customisations
+    def save(self, commit=True):
+        project = super().save(commit=False)
+        project.author = self.user
+        # Automatically generating slug
+        project.slug = slugify(self.cleaned_data['title'])
+        if commit:
+            project.save()
+        return project
+
