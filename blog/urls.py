@@ -11,4 +11,5 @@ urlpatterns = [
     path('projects/<slug:slug>/', views.ProjectDetail.as_view(), name='project_detail'),
     path('like/<slug:slug>/', views.ProjectLike.as_view(), name='project_like'),
     path('category/<str:cat_name>/', views.CategoryPage.as_view(), name='category'),
+    path('add-project/', views.AddProject, name='add_project'),
 ]
