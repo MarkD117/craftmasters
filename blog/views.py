@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 from .models import Category, Project
-from .forms import CommentForm
+from .forms import CommentForm, AddProjectForm
 
 
 class LandingPage(generic.ListView):
@@ -28,6 +29,25 @@ class ProjectList(generic.ListView):
     template_name = 'projects.html'
     # if there are more than 6 projects, page navigation will be added
     paginate_by = 6
+
+
+@login_required
+def AddProject(request):
+    if request.method == 'POST':
+        # Creating form instance and pass current user to form
+        form = AddProjectForm(request.POST, user=request.user)
+        if form.is_valid():
+            form.save()
+            # Redirects to the project detail page for new project
+            # Passes slug of instance as parameter
+            return redirect('project_detail', slug=form.instance.slug)
+    else:
+        # If form is not being submitted, current user is passed to form
+        form = AddProjectForm(user=request.user)
+
+    # Form passed as context to template
+    context = {'add_project_form': form}
+    return render(request, 'add_project.html', context)
 
 
 class ProjectDetail(View):
