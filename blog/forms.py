@@ -41,6 +41,7 @@ class AddProjectForm(forms.ModelForm):
             project.save()
         return project
 
+
 class UpdateProjectForm(forms.ModelForm):
     class Meta:
         model = Project
@@ -48,4 +49,10 @@ class UpdateProjectForm(forms.ModelForm):
         widgets = {
             'content': SummernoteWidget(),
         }
+
+    # Excluding 'uncategorized' category from update form
+    def __init__(self, *args, **kwargs):
+        super(UpdateProjectForm, self).__init__(*args, **kwargs)
+        uncategorized_category = Category.objects.get(category_name='uncategorized')
+        self.fields['category'].queryset = Category.objects.exclude(id=uncategorized_category.id)
         
