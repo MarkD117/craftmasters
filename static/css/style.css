@@ -330,13 +330,13 @@ form.login > p > input {
     border: 1px solid #f26749;
 }
 
-.auth-link {
+.link {
     color: #f26749;
     text-decoration: none;
 }
 
-.auth-link:hover,
-.auth-link:active {
+.link:hover,
+.link:active {
     color: #d12600;
     text-decoration: underline;
 }
