@@ -310,7 +310,7 @@ form.login > p > input {
 
 /* Add semi-transparent bg to form */
 
-.auth-bg {
+.form-bg {
     max-width: 40%;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -364,11 +364,6 @@ form.login > p > input {
     border-radius: 3px;
 }
 
-body div.note-editor {
-  border: 1px solid #3a3a3aa6 !important;
-  border-radius: 3px !important;
-}
-
 /* ----- Media Queries ----- */
 
 @media (min-width: 1400px) {
@@ -382,7 +377,7 @@ body div.note-editor {
 }
 
 @media (max-width: 1400px) {
-    .auth-bg {
+    .form-bg {
         max-width: 50%;
     }
 }
@@ -392,7 +387,7 @@ body div.note-editor {
         height: 350px;
     }
 
-    .auth-bg {
+    .form-bg {
         max-width: 60%;
     }
 }
@@ -412,7 +407,7 @@ body div.note-editor {
         height: 200px;
     }
 
-    .auth-bg {
+    .form-bg {
         max-width: 70%;
     }
     
@@ -427,7 +422,7 @@ body div.note-editor {
         margin-left: 0;
     }
 
-    .auth-bg {
+    .form-bg {
         max-width: 80%;
     }
 }
@@ -449,7 +444,7 @@ body div.note-editor {
         margin-top: 15%;
     }
 
-    .auth-bg {
+    .form-bg {
         max-width: 85%;
     }
 
