@@ -71,6 +71,20 @@ def UpdateProject(request, slug):
     return render(request, 'update_project.html', context)
 
 
+@login_required
+def DeleteProject(request, slug):
+    # Retrieving project instance to delete
+    project = get_object_or_404(Project, slug=slug, author=request.user)
+    
+    # Delete project and redirect to projects page
+    if request.method == 'POST':
+        project.delete()
+        return redirect('projects')
+    else:
+        # Redirect to detail page if method is not 'POST'
+        return HttpResponseRedirect(reverse('project_detail', args=[slug]))
+
+
 class ProjectDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
