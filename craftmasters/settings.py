@@ -96,6 +96,13 @@ TEMPLATES = [
     },
 ]
 
+SUMMERNOTE_CONFIG = {
+    'summernote': {
+        # Change editor size
+        'width': '100%',
+    },
+}
+
 WSGI_APPLICATION = 'craftmasters.wsgi.application'
 
 
