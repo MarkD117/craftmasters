@@ -41,3 +41,11 @@ class AddProjectForm(forms.ModelForm):
             project.save()
         return project
 
+class UpdateProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ['title', 'title_image', 'category', 'description', 'content', 'status']
+        widgets = {
+            'content': SummernoteWidget(),
+        }
+        
