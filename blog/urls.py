@@ -13,4 +13,5 @@ urlpatterns = [
     path('category/<str:cat_name>/', views.CategoryPage.as_view(), name='category'),
     path('add-project/', views.AddProject, name='add_project'),
     path('projects/<slug:slug>/update/', views.UpdateProject, name='update_project'),
+    path('projects/<slug:slug>/delete/', views.DeleteProject, name='delete_project'),
 ]
