@@ -35,7 +35,7 @@ class ProjectList(generic.ListView):
 def AddProject(request):
     if request.method == 'POST':
         # Creating form instance and pass current user to form
-        form = AddProjectForm(request.POST, user=request.user)
+        form = AddProjectForm(request.POST, request.FILES, user=request.user)
         if form.is_valid():
             form.save()
             # Redirects to the project detail page for new project
