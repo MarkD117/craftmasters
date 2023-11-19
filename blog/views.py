@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .models import Category, Project
-from .forms import CommentForm, AddProjectForm
+from .forms import CommentForm, AddProjectForm, UpdateProjectForm
 
 
 class LandingPage(generic.ListView):
@@ -48,6 +48,27 @@ def AddProject(request):
     # Form passed as context to template
     context = {'add_project_form': form}
     return render(request, 'add_project.html', context)
+
+
+@login_required
+def UpdateProject(request, slug):
+    # Getting project to edit
+    project = get_object_or_404(Project, slug=slug, author=request.user)
+
+    if request.method == 'POST':
+        # Getting updated form
+        form = UpdateProjectForm(request.POST, request.FILES, instance=project)
+        if form.is_valid():
+            form.save()
+            # Redirects to updated project page
+            return redirect('project_detail', slug=project.slug)
+    else:
+        # Populating form fields with current values
+        form = UpdateProjectForm(instance=project)
+
+    # Passing updated form/project data to template
+    context = {'update_project_form': form, 'project': project}
+    return render(request, 'update_project.html', context)
 
 
 class ProjectDetail(View):
