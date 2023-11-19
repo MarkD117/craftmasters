@@ -52,7 +52,7 @@ def AddProject(request):
 
 @login_required
 def UpdateProject(request, slug):
-    # Getting project to edit
+    # Retrieving project instance to edit
     project = get_object_or_404(Project, slug=slug, author=request.user)
 
     if request.method == 'POST':
