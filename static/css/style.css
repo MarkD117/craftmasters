@@ -8,6 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #fafafa;
 }
 
 main {
@@ -28,14 +29,14 @@ main {
   
   .search-btn:hover {
     background-color: #f26749;
-    color: white;
+    color: #fafafa;
   }
 
 /* ----- hero image ----- */
 
 .image-container{
     background-color: black;
-    color: white;
+    color: #fafafa;
     position: relative;
     text-align: center;
 }
@@ -45,7 +46,7 @@ main {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: solid 2px white;
+    border: solid 2px #fafafa;
     padding: 15px;
 }
 
@@ -79,7 +80,7 @@ main {
 }
 
 .new-text {
-    color: white;
+    color: #fafafa;
     margin: 4px;
 }
 
@@ -156,7 +157,7 @@ ul.fa-ul{
 }
 
 .author {
-    color: white;
+    color: #fafafa;
     margin: 4px 4px 4px 8px;
     text-transform: uppercase;
 }
@@ -213,7 +214,7 @@ ul.fa-ul{
     -webkit-border-radius: 10;
     -moz-border-radius: 10;
     border-radius: 10px;
-    background-color: white;
+    background-color: #fafafa;
     color: #f26749;
     border: 1px solid #f26749;
     font-size: 18px;
@@ -223,7 +224,7 @@ ul.fa-ul{
   
   .page-btn:hover {
     background-color: #f26749;
-    color: white;
+    color: #fafafa;
     text-decoration: none;
   }
 
@@ -240,7 +241,7 @@ ul.fa-ul{
 
 .project-banner-text {
     background-color: #f26749;
-    color: white;
+    color: #fafafa;
     position: relative;
 }
 
