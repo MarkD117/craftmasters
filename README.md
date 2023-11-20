@@ -10,6 +10,19 @@ The live project can be accessed [here]()
 
 ## Index – Table of Contents
 
+* [UI/UX](#uiux)
+* [User Stories](#user-stories)
+* [Database Structure](#database-structure)
+* [Wireframes](#wireframes)
+* [Features](#features)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Bug Fixes](#bug-fixes)
+* [Known Bugs](#known-bugs)
+* [Deployment](#deployment)
+* [Credits](#credits)
+* [Acknowledgements](#acknowledgements)
+
 
 ## UI/UX
 
