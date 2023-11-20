@@ -63,3 +63,56 @@ Icons sourced from [Font Awesome](https://fontawesome.com/).
 
 
 
+
+
+## Wireframes
+
+During the planning stages, I  created wireframes for all pages of the site. [Balsamiq](https://balsamiq.com/wireframes) was used to design the digital wireframes. All wireframes can be seen below.
+
+### Home Page Wireframes
+
+<details>
+<summary>Click to see the Home Page Wireframes</summary>
+
+| Type | Image |
+| --- | --- |
+| Desktop | ![screenshot](documentation/wireframes/home-page-desktop.png) |
+| Mobile | ![screenshot](documentation/wireframes/home-page-mobile.png) |
+
+</details>
+
+### Project & Categories Pages Wireframes
+
+<details>
+<summary>Click to see the Projects & Category Pages Wireframes</summary>
+
+| Type | Image |
+| --- | --- |
+| Desktop | ![screenshot](documentation/wireframes/projects-categories-pages-desktop.png) |
+| Mobile | ![screenshot](documentation/wireframes/projects-categories-pages-mobile.png) |
+
+</details>
+
+### Project Detail Page Wireframes
+
+<details>
+<summary>Click to see Project Detail Page Wireframes</summary>
+
+| Type | Image |
+| --- | --- |
+| Desktop | ![screenshot](documentation/wireframes/project-detail-page-desktop.png) |
+| Mobile | ![screenshot](documentation/wireframes/project-detail-page-mobile.png) |
+
+</details>
+
+### Add Project Page Wireframes
+
+<details>
+<summary>Click to see the Add Project Page Wireframes</summary>
+
+| Type | Image |
+| --- | --- |
+| Desktop | ![screenshot](documentation/wireframes/add-project-page-desktop.png) |
+| Mobile | ![screenshot](documentation/wireframes/add-project-page-mobile.png) |
+
+</details>
