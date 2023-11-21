@@ -66,7 +66,7 @@ Icons sourced from [Font Awesome](https://fontawesome.com/).
 
 This project was launched alongside a GitHub Projects Page in order to measure and manage the anticipated workload. The goal was to outline my projected workload, list the epics, and then break them down into user stories or bite-sized tasks to work on in order to complete the site on time.
 
-To see Kanban please click [here](https://github.com/users/MarkD117/projects/6).
+To see the project Kanban please click [here](https://github.com/users/MarkD117/projects/6).
 
 At the initial planning stages, I planned each page individually listing the requirements and features I wanted to include. From these page plans, I created the user stories. The user stories were implemented in such a way that the core functionality of the site works seamlessly. This was mainly centered around the projects being created and displaying correctly.
 
@@ -200,6 +200,32 @@ The site footer was built to provide the user with more information as well as t
 </p>
 
 - Mobile
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+### **Home Page**
+
+### Hero Image
+
+Below the nav bar is a large darkened image of a woodworking workshop to gently and immediately introduce the user to the purpose of the site. The hero image, also displays the name of the site.
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+### About Section
+
+The about section of the home page, is a small introduction into what the site is, informing the user if the site is for them. It also serves as a warm welcome to the blog if the user decides to continue.
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+### Lastest Projects
+
+Below the about section are the lastest projects. In this section, any new posts will automatically be pushed to the front home page, allowing new posts to gain traction easily and reach new audiences. Each project card will be tagged with a 'NEW' label directing site users attention to the content. This also encourages bloggers to post new projects consistantly to be seen immediately on the first page of the site. There is also a clickable link that will bring the user to the projects page.
 
 <p align="center">
     <img src="documentation/insert"/>
