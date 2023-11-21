@@ -38,7 +38,7 @@ A 'Tomato' red/orange was used for the site buttons and links as I felt an orang
 #### Site Colour Pallet
 
 <p align="center">
-    <img src="documentation/"/>
+    <img src="documentation/site-colour-pallet.png"/>
 </p>
 
 - `#252525` used for nav bar & footer.
@@ -71,7 +71,9 @@ As of right now, the 'project_images CloudinaryField' was removed from the model
 
 This field, could be re-added in the future to allow a collage of project images to be shown of the project altogether, yet, this is something that will be explored further in the future features section of this README.
 
-![Screenshot](documentation/initial-model-plan.png)
+<p align="center">
+    <img src="documentation/initial-model-plan.png"/>
+</p>
 
 ## Wireframes
 
