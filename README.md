@@ -170,3 +170,37 @@ During the planning stages, I  created wireframes for all pages of the site. [Ba
 | Mobile | ![screenshot](documentation/wireframes/add-project-page-mobile.png) |
 
 </details>
+
+## Features
+
+### Navigation Menu
+
+The Craft Masters site is a multi page site. All pages are accessible from the nav bar located at the top of the site. The nav bar was built with bootstrap and customised to fit the needs of the site. The nav menu is fully responsive to both mobile and desktop layouts.
+
+- Desktop
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+- Mobile
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+### Site Footer
+
+The site footer was built to provide the user with more information as well as to add functionality to the website. It includes a small snippet about the site, navigation links, and contant information. The footer is also completely responsive to mobile and desktop layouts
+
+- Desktop
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+- Mobile
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
