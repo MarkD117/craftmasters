@@ -205,6 +205,32 @@ The site footer was built to provide the user with more information as well as t
     <img src="documentation/insert"/>
 </p>
 
+### **Account Pages**
+
+### Register Page
+
+If a new site user does not yet have an account, they can sign up using the register page. On this page they are prompted to enter a username, optional e-mail, and password. Once the information is correctly entered, the user can click the sign up button and they will be automatically logged into the site and redirected to the home page.
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+### Login Page
+
+If the user already has an account and wants to log back in, they can go to the login page. This page will allow them to enter their username and password to log into the site. They can also choose whether or not they want the site to remember their login. If the user accidentally goes to the login page, there is a small snippet of text informing them that if they have not created an account, they should sign up first. Included is a link the previously mentioned register page.
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+### Logout Page
+
+When a user is already logged into the site they may want to log out. The logout page allows this functionality. When the logout nav link is clicked, the user is brought to the logout page. An onscreen prompt is shown asking the user if they want to sign out from the site. If the user clicks sign out, they are immediately logged out of the site.
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
 ### **Home Page**
 
 ### Hero Image
