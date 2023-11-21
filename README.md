@@ -230,3 +230,43 @@ Below the about section are the lastest projects. In this section, any new posts
 <p align="center">
     <img src="documentation/insert"/>
 </p>
+
+### **Projects Page**
+
+### Project Cards
+
+The projects page is the main page for displaying all of the projects that have been created by users. There are six cards on this page that will vary in size and orientation based on screen size. Each card has 7 individual features.
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+#### Title Image
+
+This image is above the project information and is set by the user to immediately give a site reader context into the content of the project. This is done to draw the readers attention and to get more focus on the content below.
+
+#### Author Tag
+
+Each card has it's own unique author tag that displays the username of the person who created the post.
+
+#### Project Title
+
+The project title is set by the creator of the post and again, informs the reader about what the project is.
+
+#### Project Description
+
+The project description is a short snippet about the main content of the project post. It's intention is to intice the reader into clicking into the project to read more about it. The description is confined to a maximum of three lines of text as it should be only used as context, not content. That said, I have not restricted longer descriptions as it is frustrating when having a good idea about a description only to be halted by not having enough characters. 
+
+Although longer descriptions are not prohibited, it is not advised. To assist with slightly longer descriptions, I have implemented a feature to add an ellipsis to the end of text that is longer than the confined space of three lines. As well as that, when the user hovers over any project description that extends beyond the three lines, a scroll bar will appear, allowing them to read the entire description without taking up too much space on the page.
+
+#### Post Date
+
+The projects post date is an automatically set value that is assigned to each post upon creation. This is to give the reader information on what projects are the newest and most up to date.
+
+#### Like Counter
+
+The like counter is an icon that shows how many users have liked this project. This gives other users an idea of what projects are popular and intices them to read more about higher liked projects.
+
+#### Clickable Link
+
+Upon hovering over the project title or description, the text colour and cursor type will change, indicating that the projects are clickable. Upon clicking the project, the user will be redirected to a detailed information page about that particular project. A 'Read Article' button with the same effect is also included to further outline the fact that the user can see more information about the project.
