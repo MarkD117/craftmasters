@@ -61,7 +61,50 @@ This font was sourced from [Google Fonts](https://fonts.google.com/).
 
 Icons sourced from [Font Awesome](https://fontawesome.com/).
 
+## Agile Development
 
+This project was launched alongside a GitHub Projects Page in order to measure and manage the anticipated workload. The goal was to outline my projected workload, list the epics, and then break them down into user stories or bite-sized tasks to work on in order to complete the site on time.
+
+To see Kanban please click [here](https://github.com/users/MarkD117/projects/6).
+
+At the initial planning stages, I planned each page individually listing the requirements and features I wanted to include. From these page plans, I created the user stories. The user stories were implemented in such a way that the core functionality of the site works seamlessly. This was mainly centered around the projects being created and displaying correctly.
+
+On each user story, acceptance criteria was added along with tasks. Once a task was completed, the appropriate box would be ticked and if all parts of the user story were completed and the acceptance criteria was met, the user story was moved from **In Progress** to **Completed**.
+
+#### User stories
+
+####  Completed User Stories
+
+Click on a user story below to be directed to the Kanban project to examine any of the additional details of the user stories. If the specific story does not appear automatically, please click on it from the project page for more details.
+
+ 1. [USER STORY: Landing Page](https://github.com/MarkD117/craftmasters/issues/1)
+ 2. [USER STORY: View Projects Page](https://github.com/MarkD117/craftmasters/issues/2)
+ 3. [USER STORY: View Project Post Info](https://github.com/MarkD117/craftmasters/issues/3)
+ 4. [USER STORY: Site Pagination](https://github.com/MarkD117/craftmasters/issues/4)
+ 5. [USER STORY: Open a post](https://github.com/MarkD117/craftmasters/issues/5)
+ 6. [USER STORY: Comment on a post](https://github.com/MarkD117/craftmasters/issues/6)
+ 7. [USER STORY: Like / Unlike](https://github.com/MarkD117/craftmasters/issues/8)
+ 8. [USER STORY: Register an account](https://github.com/MarkD117/craftmasters/issues/9)
+ 9. [USER STORY: Login / Logout](https://github.com/MarkD117/craftmasters/issues/10)
+ 10. [USER STORY: Selectable Categories](https://github.com/MarkD117/craftmasters/issues/12)
+ 11. [USER STORY: CRUD own project posts](https://github.com/MarkD117/craftmasters/issues/13)
+ 12. [USER STORY: Create Drafts](https://github.com/MarkD117/craftmasters/issues/15)
+ 13. [USER STORY: Manage all posts](https://github.com/MarkD117/craftmasters/issues/16)
+ 14. [USER STORY: Approve Comments](https://github.com/MarkD117/craftmasters/issues/17)
+ 15. [USER STORY: View Comments](https://github.com/MarkD117/craftmasters/issues/18)
+ 16. [USER STORY: Manage Categories](https://github.com/MarkD117/craftmasters/issues/22)
+ 
+
+####  Incompleted User Stories
+
+The following user stories have not been completed as they were deemed unnecessary for the core functionality of the site; however, they are possible features to implement in the future. 
+
+ 1. [USER STORY: Contact Creator](https://github.com/MarkD117/craftmasters/issues/7)
+ 2. [USER STORY: Search Function](https://github.com/MarkD117/craftmasters/issues/11)
+ 3. [USER STORY: Create Drafts](https://github.com/MarkD117/craftmasters/issues/14)
+ 4. [USER STORY: View Profile](https://github.com/MarkD117/craftmasters/issues/19)
+ 5. [USER STORY: View own likes posts](https://github.com/MarkD117/craftmasters/issues/20)
+ 6. [USER STORY: Set up profile image and bio](https://github.com/MarkD117/craftmasters/issues/21)
 
 ## Database Structure
 
