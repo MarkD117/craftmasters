@@ -11,6 +11,7 @@ The live project can be accessed [here]()
 ## Index – Table of Contents
 
 * [UI/UX](#uiux)
+* [Agile Development](#agile-development)
 * [User Stories](#user-stories)
 * [Database Structure](#database-structure)
 * [Wireframes](#wireframes)
