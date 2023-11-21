@@ -63,7 +63,15 @@ Icons sourced from [Font Awesome](https://fontawesome.com/).
 
 
 
+## Database Structure
 
+During the planning stages of this project, [Lucid Chart](https://www.lucidchart.com/) was used to design the initial structure of the database in order to plan the data storage and relationships of site.
+
+As of right now, the 'project_images CloudinaryField' was removed from the model. The original intent with this entry was to display more images of the project in the created blog; however, with the addition of the summernote editor, users can upload images directly into the content field, therefore making it redundant.
+
+This field, could be re-added in the future to allow a collage of project images to be shown of the project altogether, yet, this is something that will be explored further in the future features section of this README.
+
+![Screenshot](documentation/initial-model-plan.png)
 
 ## Wireframes
 
