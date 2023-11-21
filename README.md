@@ -233,6 +233,10 @@ Below the about section are the lastest projects. In this section, any new posts
 
 ### **Projects Page**
 
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
 ### Project Cards
 
 The projects page is the main page for displaying all of the projects that have been created by users. There are six cards on this page that will vary in size and orientation based on screen size. Each card has 7 individual features.
@@ -270,3 +274,57 @@ The like counter is an icon that shows how many users have liked this project. T
 #### Clickable Link
 
 Upon hovering over the project title or description, the text colour and cursor type will change, indicating that the projects are clickable. Upon clicking the project, the user will be redirected to a detailed information page about that particular project. A 'Read Article' button with the same effect is also included to further outline the fact that the user can see more information about the project.
+
+### **Projects Detail Page**
+
+When a user clicks to read more about a post, they are redirected to the project detail page. This pages intent is to show the main content of the project that is written by the blogger. This page gives the highest amount of detail to other users and allows them to read the blog.
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+### Project Banner
+
+The project banner holds a lot of information about the project. This includes the title of the project, the title image, author of the project and the date that the project was posted. This banner gives the user more information about the post that they are reading.
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+### Project Content
+
+Below the banner is the content of the project. The author of the project can enter all the information of what their project is about and it will be displayed here. Images can also be added to the content using the [Summernote Editor](https://github.com/summernote/django-summernote). More info about the editor will be mentioned in the add project form.
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+### Edit & Delete Buttons
+
+If the site user is logged in and is the original author of the post, the edit and delete buttons will appear. The edit button is used to change any and all details of the project. When clicked, it will direct the user to a form that is prepopulated with the data of the existing project post. When the neccessary modifications have been made, the user can submit the form and the changes will be logged to the database. They will also be redirected to the detailed view of their updated project.
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+When the delete button is clicked, a modal will appear asking for confirmation that the user does actually want to delete the post in question. This prevents the user from accidentally deleting their post.
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+### Like & Comments counter
+
+Below the project content are the like button and comment counter. The function of these features is quite simple, when a user is logged in, they may click the like button to add a like to the project. This will change the style of the button and increase the counter. The counter change will be reflected everywhere on the site. The comment counter works in a similar fashion. When a comment is left on the project, the counter increases.
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+### Comments Section
+
+At the bottom of the project detail page is the comments section. Users are prompted to leave a comment on the project to encourage discussion about different crafts. It is also a platform to talk with the author of the post directly. When leaving a comment, the users username is shown alongside the amount of time that has passed since the comment was left. The body of the comment is shown below that information. Oldest comments appear first so there is an element of a conversation back and forth being had the further down you scroll.
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
