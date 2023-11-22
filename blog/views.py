@@ -38,6 +38,7 @@ class ProjectList(generic.ListView):
 class ProjectDrafts(LoginRequiredMixin, generic.ListView):
     model = Project
     template_name = 'project_drafts.html'
+    # defining variable name for template
     context_object_name = 'drafted_projects'
     paginate_by = 6
 
