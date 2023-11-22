@@ -486,3 +486,11 @@ During the development of the add project feature, I ran into a bug with the ```
 To my dismay, the image was still not uploading and was again, defaulting to the placholder image. I investigated for a good while into what was causing this bug, yet with no error messages or inclination to what was going wrong, I was stumped. I tried many things to fix this issue such as changing the database constraints, logging messages throughout the code to test it and even completely remigrating the database.
 
 After a long time of troubleshooting, I found that I forgot to include ```request.FILES``` when creating the form instance. It was a very bittersweet moment fixing this error as it took longer than I would like to admit to find and solve. That said, once this fix was implemented, the image file uploaded correctly.
+
+## Known Bugs
+
+There is currently an operational error that periodically appears preventing the server from running correctly. This error notes that there are too many connections to the database. The fix for this bug was to terminate the open connections to the database and the server runs perfectly fine. I was talking to my mentor about this and he said that it could just be existing connections that hadn't closed yet. This error only appeared when refreshing the page or making many changes in quick succession. That said, I am mentioning it in the readme in case the bug appears again.
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
