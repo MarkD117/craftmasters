@@ -18,8 +18,11 @@ class CategoryPage(View):
     def get(self, request, cat_name, *args, **kwargs):
         # Getting Category object based on the category name
         category = get_object_or_404(Category, category_name=cat_name)
-        # Filter projects based on category
-        project_category = Project.objects.filter(category=category)
+        # Filter projects based on category, excluding draft posts
+        project_category = Project.objects.filter(
+            category=category,
+            status=1  # Exclude draft posts by filtering based on status
+        )
         return render(request, 'categories.html', {'cat_name': cat_name, 'project_category': project_category})
 
 
