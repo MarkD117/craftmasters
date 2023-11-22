@@ -375,3 +375,19 @@ This also allows authors to upload their own images directly into the content fi
     <img src="documentation/insert"/>
     <img src="documentation/insert"/>
 </p>
+
+## Future Features
+
+### Search Function
+
+As well as the category filter option, I would also like to add a search feature to give the site users the option to tailor their site experience to their own liking. This feature would allow users to search for projects that they would be interested in. This would be particularly helpful if there are a lot of blog posts that are on the site, making it difficult to find what you are looking for. If a site user enjoys a particular authors blog posts, they can also search for them directly and instantly get access to that content.
+
+### User Profile
+
+One big feature that I would be keen to implement in the future would be a user profile. This gives the site a bit more character allowing users to customise their own profile with a profile picture, custom bio and social links. By creating individual profiles, users can showcase their unique woodworking projects, share their expertise, and build a portfolio of their creations. Users can view their own personal profiles allowing them to see all of their own projects, as well as any posts they have liked.
+
+Profile pictures can show up beside comments left on project posts, and when clicked will bring users to that specific profile. As I mentioned in the [incomplete users stories](#incomplete-user-stories) section of this readme, this feature was originally intended to be added; however, I did not have the time to implement such a feature with the polish I would want to release it with. I decided to focus on the core functionality of the site and add it as a future feature.
+
+### Project Image Slider/Rotator
+
+As previously mentioned in the [Database Structure](#database-structure) setion of the readme. The project_images cloudinary field was removed from the model. This was due to the summernote text editor allowing users to upload images directly into the content field. This option could be added back to allow the author to show a gallery of images of the project in one location. My initial thought process for this was to display the images as a slider or carousel, allowing the reader to slide through the images of the full project.
