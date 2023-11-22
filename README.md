@@ -569,7 +569,7 @@ if os.path.isfile('env.py'):
 SECRET_KEY = os.environ.get('SECRET_KEY')
 ```
 
-8. Replace the datases section with the following code;
+8. Replace the database section with the following code;
 
 ```python
 DATABASES = {
