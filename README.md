@@ -632,7 +632,7 @@ The steps to do this are as follows:
 
 1.  Sign up or Login to [GitHub](https://github.com/)
 2. Go to the repository which can be accessed [here](https://github.com/MarkD117/craftmasters). 
-3.  At the top of the repository, on the right side of the page, select **Fork**.
+3.  At the top of the repository, on the right side of the page, select ```Fork```.
 4.  A copy of the project repository should now be created as your own repository.
 
 ### Create Repository Clone
