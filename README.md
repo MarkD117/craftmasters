@@ -410,3 +410,43 @@ As previously mentioned in the [database structure](#database-structure) setion 
 - [GitHub](https://github.com/) used to store site source code.
 - [GitPod](https://gitpod.io/) used as a cloud-based IDE for developing the site.
 - [Heroku](https://id.heroku.com/) used to deploy the project.
+
+
+
+## Bug Fixes
+
+### Category Filter Bug
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+When developing the category filter feature, I recieved a Value error that expected and id yet recieved the category in the form of a string. In the CategoryPage view, I was trying to filter projects based on the category field, which is a ForeignKey to the Category model. However, I was passing the cat_name parameter, which is a string representing the name of the category.
+
+To fix this issue I needed to modify the CategoryPage view to filter projects based on the actual Category object, not just the name. This way, it will fetch the Category object based on the name, and that object can be used to filter the projects.
+
+**Bugged Code**
+```
+# views.py
+def CategoryPage(request, cat_name):
+    project_category = Project.objects.filter(category=cat_name)
+    return render(request, 'categories.html', {'cat_name': cat_name, 'project_category': project_category})
+
+# urls.py
+path('category/<str:cat_name>/', views.CategoryPage, name='category'),
+```
+
+**Fixed Code**
+```
+# views.py
+class CategoryPage(View):
+    def get(self, request, cat_name, *args, **kwargs):
+        # Getting Category object based on the category name
+        category = get_object_or_404(Category, category_name=cat_name)
+        # Filter projects based on category
+        project_category = Project.objects.filter(category=category)
+        return render(request, 'categories.html', {'cat_name': cat_name, 'project_category': project_category})
+
+# urls.py
+path('category/<str:cat_name>/', views.CategoryPage.as_view(), name='category'),
+```
