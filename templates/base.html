@@ -36,9 +36,6 @@
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'add_project' %}">Add Project</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link {% block project_drafts_active %}{% endblock %}" href="{% url 'project_drafts' %}">Drafts</a>
                         </li>
                         <li class="nav-item">
@@ -68,10 +65,11 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn search-btn" type="submit">Search</button>
-                </form>
+                {% if user.is_authenticated %}
+                <div class="d-flex">
+                    <button type="button" class="btn search-btn"><a class="text-reset text-decoration-none" href="{% url 'add_project' %}">Add Project</a></button>
+                </div>
+                {% endif %}
             </div>
         </div>
     </nav>

@@ -25,14 +25,14 @@ main {
 }
 
 .search-btn {
-    background-color: #252525;
-    color: #f26749;
-    border: 1px solid #f26749;
+    background-color: #f26749;
+    color: #fafafa;
   }
   
   .search-btn:hover {
-    background-color: #f26749;
-    color: #fafafa;
+    background-color: #252525;
+    color: #f26749;
+    border: 1px solid #f26749;
   }
 
 /* ----- hero image ----- */
