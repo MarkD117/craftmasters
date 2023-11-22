@@ -108,32 +108,55 @@ def DeleteProject(request, slug):
 class ProjectDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Project.objects.filter(status=1)
-        # Gets a published project with the correct slug
-        project = get_object_or_404(queryset, slug=slug)
-        # Gets comments of the project ordered by oldest 1st
-        comments = project.comments.filter(approved=True).order_by('created_on')
-        liked = False
-        # If the user id exists to say a user has liked
-        # the project, the liked value will be set to True
-        if project.likes.filter(id=self.request.user.id).exists():
-            liked = True
+        queryset = Project.objects.all()
+        if not request.user.is_authenticated:
+            queryset = queryset.filter(status=1)  # Only show published posts to non-logged-in users
 
-        # Sending all information to the render method
-        return render(
-            # Sending request
-            request,
-            # Specifying the template required
-            'project_detail.html',
-            # Using a dictionary to supply context
-            {
-                'project': project,
-                'comments': comments,
-                'commented': False,
-                'liked': liked,
-                'comment_form': CommentForm(),
-            },
-        )
+        project = get_object_or_404(queryset, slug=slug)
+
+        if request.user == project.author or request.user.is_superuser:
+            # Gets comments of the project ordered by oldest 1st
+            comments = project.comments.filter(approved=True).order_by('created_on')
+            liked = False
+            # If the user id exists to say a user has liked
+            # the project, the liked value will be set to True
+            if project.likes.filter(id=self.request.user.id).exists():
+                liked = True
+
+            # Sending all information to the render method
+            return render(
+                # Sending request
+                request,
+                # Specifying the template required
+                'project_detail.html',
+                # Using a dictionary to supply context
+                {
+                    'project': project,
+                    'comments': comments,
+                    'commented': False,
+                    'liked': liked,
+                    'comment_form': CommentForm(),
+                },
+            )
+        elif project.status == 0:
+            raise Http404("You don't have permission to view this project.")
+        else:
+            comments = project.comments.filter(approved=True).order_by('created_on')
+            liked = False
+            if project.likes.filter(id=self.request.user.id).exists():
+                liked = True
+
+            return render(
+                request,
+                'project_detail.html',
+                {
+                    'project': project,
+                    'comments': comments,
+                    'commented': False,
+                    'liked': liked,
+                    'comment_form': CommentForm(),
+                },
+            )
     
     def post(self, request, slug, *args, **kwargs):
         queryset = Project.objects.filter(status=1)
