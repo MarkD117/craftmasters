@@ -110,8 +110,10 @@ class ProjectDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Project.objects.all()
         if not request.user.is_authenticated:
-            queryset = queryset.filter(status=1)  # Only show published posts to non-logged-in users
+            # Only shows published posts to non-logged-in users
+            queryset = queryset.filter(status=1)
 
+        # Gets a published project with the correct slug
         project = get_object_or_404(queryset, slug=slug)
 
         if request.user == project.author or request.user.is_superuser:
