@@ -415,6 +415,34 @@ As previously mentioned in the [database structure](#database-structure) setion 
 
 ## Bug Fixes
 
+### Category Default Bug
+
+During the inital development stages of the categories. I needed to specifically define what happens if a category that is assigned to a project gets deleted. I decided on assigning an uncategorized value to any project whos category was deleted. This would prevent projects from producing errors as the category field value wouldn't exist and prevents projects from being accidentaly deleted.
+
+<p align="center">
+    <img src="documentation/insert"/>
+</p>
+
+I first tried to set the ```on_delete=models.SET_DEFAULT``` default value to ```'uncategorized'```. When testing this feature, I recieved a value error expecting an 'id'. After investigating this error further I found that on_delete looks for the id of the specific category. The way that I had initially configured this feature, was to set the category to a string value of 'uncategorized'.
+
+The fix for this was to create the uncategorized category, get the category id, and assign the id to the default value when deleting the category. After this change was made, the error was cleared and the category defaults to 'uncategorized'.
+
+**Code Solution**
+```python
+# Getting 'uncategorized' category id for default value.
+uncategorized_category = Category.objects.get(category_name='uncategorized')
+uncategorized_category_id = uncategorized_category.id
+
+# Category field in model
+category = models.ForeignKey(
+        Category,
+        on_delete=models.SET_DEFAULT,
+        default=uncategorized_category_id,
+        null=True,
+        related_name='project_categories'
+    )
+```
+
 ### Category Filter Bug
 
 <p align="center">
