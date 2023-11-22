@@ -647,3 +647,10 @@ This can be accomplished by the following steps:
 4.   Navigate to your preferred code editor and change the directory within the terminal to the location where you wish to clone the repository.
 5.   Type ```git clone``` and paste the https link you copied from github.
 6.   Press **Enter** and git will clone the repository to your local machine.
+
+
+## Acknowledgements 
+
+I would like to thank my mentor Chris Quinn for all of his help and assistance. I would also like my cohort mentor Alan Bushell, the Code Institute team and the Slack community.  
+
+[Back to top ⇧](#craft-masters)
