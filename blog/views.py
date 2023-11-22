@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect, Http404
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Category, Project
 from .forms import CommentForm, AddProjectForm, UpdateProjectForm
 
@@ -29,6 +30,16 @@ class ProjectList(generic.ListView):
     template_name = 'projects.html'
     # if there are more than 6 projects, page navigation will be added
     paginate_by = 6
+
+
+class ProjectDrafts(LoginRequiredMixin, generic.ListView):
+    model = Project
+    template_name = 'project_drafts.html'
+    context_object_name = 'drafted_projects'
+    paginate_by = 6
+
+    def get_queryset(self):
+        return Project.objects.filter(author=self.request.user, status=0).order_by('-created_on')
 
 
 @login_required
