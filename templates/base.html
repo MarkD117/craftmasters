@@ -39,7 +39,7 @@
                             <a class="nav-link" href="{% url 'add_project' %}">Add Project</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'project_drafts' %}">Drafts</a>
+                            <a class="nav-link {% block project_drafts_active %}{% endblock %}" href="{% url 'project_drafts' %}">Drafts</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
