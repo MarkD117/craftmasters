@@ -54,6 +54,7 @@ class UpdateProjectForm(forms.ModelForm):
         }
 
     # Excluding 'uncategorized' category from update form
+    # Add title image label to title_image field
     def __init__(self, *args, **kwargs):
         super(UpdateProjectForm, self).__init__(*args, **kwargs)
         self.fields['title_image'].label = 'Title Image'
