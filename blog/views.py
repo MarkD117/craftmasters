@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.contrib.auth.decorators import login_required
 from .models import Category, Project
 from .forms import CommentForm, AddProjectForm, UpdateProjectForm
@@ -53,36 +53,45 @@ def AddProject(request):
 @login_required
 def UpdateProject(request, slug):
     # Retrieving project instance to edit
-    project = get_object_or_404(Project, slug=slug, author=request.user)
+    project = get_object_or_404(Project, slug=slug)
 
-    if request.method == 'POST':
-        # Getting updated form
-        form = UpdateProjectForm(request.POST, request.FILES, instance=project)
-        if form.is_valid():
-            form.save()
-            # Redirects to updated project page
-            return redirect('project_detail', slug=project.slug)
+    # Checks if logged-in user is author or a superuser
+    if request.user == project.author or request.user.is_superuser:
+        if request.method == 'POST':
+            # Getting updated form
+            form = UpdateProjectForm(request.POST, request.FILES, instance=project)
+            if form.is_valid():
+                form.save()
+                # Redirects to updated project page
+                return redirect('project_detail', slug=project.slug)
+        else:
+            # Populating form fields with current values
+            form = UpdateProjectForm(instance=project)
+
+        # Passing updated form/project data to template
+        context = {'update_project_form': form, 'project': project}
+        return render(request, 'update_project.html', context)
     else:
-        # Populating form fields with current values
-        form = UpdateProjectForm(instance=project)
-
-    # Passing updated form/project data to template
-    context = {'update_project_form': form, 'project': project}
-    return render(request, 'update_project.html', context)
+        # If  user is not author or superuser, raise a 404 error
+        raise Http404("You don't have permission to edit this project.")
 
 
 @login_required
 def DeleteProject(request, slug):
     # Retrieving project instance to delete
-    project = get_object_or_404(Project, slug=slug, author=request.user)
+    project = get_object_or_404(Project, slug=slug)
     
-    # Delete project and redirect to projects page
-    if request.method == 'POST':
-        project.delete()
-        return redirect('projects')
+    # Checks if logged-in user is author or a superuser
+    if request.user == project.author or request.user.is_superuser:
+        if request.method == 'POST':
+            project.delete()
+            return redirect('projects')
+        else:
+            # Redirects to detail page if method is not 'POST'
+            return render(request, 'project_detail.html', {'project': project})
     else:
-        # Redirect to detail page if method is not 'POST'
-        return HttpResponseRedirect(reverse('project_detail', args=[slug]))
+        # Raises a 404 error if user is not the author or is a super user
+        raise Http404("You don't have permission to delete this project.")
 
 
 class ProjectDetail(View):

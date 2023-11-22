@@ -27,6 +27,9 @@ class AddProjectForm(forms.ModelForm):
         # Ensuring form is initialised properly
         super(AddProjectForm, self).__init__(*args, **kwargs)
 
+        # Set custom label for title_image
+        self.fields['title_image'].label = 'Title Image'
+
         # Exclude 'uncategorized' category from the queryset
         uncategorized_category = Category.objects.get(category_name='uncategorized')
         self.fields['category'].queryset = Category.objects.exclude(id=uncategorized_category.id)
@@ -53,6 +56,7 @@ class UpdateProjectForm(forms.ModelForm):
     # Excluding 'uncategorized' category from update form
     def __init__(self, *args, **kwargs):
         super(UpdateProjectForm, self).__init__(*args, **kwargs)
+        self.fields['title_image'].label = 'Title Image'
         uncategorized_category = Category.objects.get(category_name='uncategorized')
         self.fields['category'].queryset = Category.objects.exclude(id=uncategorized_category.id)
         
