@@ -426,7 +426,7 @@ When developing the category filter feature, I recieved a Value error that expec
 To fix this issue I needed to modify the CategoryPage view to filter projects based on the actual Category object, not just the name. This way, it will fetch the Category object based on the name, and that object can be used to filter the projects.
 
 **Bugged Code**
-```
+```python
 # views.py
 def CategoryPage(request, cat_name):
     project_category = Project.objects.filter(category=cat_name)
@@ -437,7 +437,7 @@ path('category/<str:cat_name>/', views.CategoryPage, name='category'),
 ```
 
 **Fixed Code**
-```
+```python
 # views.py
 class CategoryPage(View):
     def get(self, request, cat_name, *args, **kwargs):
