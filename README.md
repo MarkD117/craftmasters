@@ -494,3 +494,132 @@ There is currently an operational error that periodically appears preventing the
 <p align="center">
     <img src="documentation/insert"/>
 </p>
+
+## Deployment
+
+The program was deployed using [Heroku](https://id.heroku.com/). The following steps have been broken into sections to make them easier to follow.
+
+### ElephantSql
+
+1. Sign up or Login to [ElephantSql](https://www.elephantsql.com/).
+2. Click **Create New Instance**.
+3. Name the instance. The instance for this project was called **craftmasters**.
+4. Select the **Tiny Turtle (Free)** plan.
+5. Leave the **Tags** field empty.
+6. Click **Select Region**
+7. Select the data center closest to you. In my case **EU-West-1 (Ireland)** is closest.
+8. Click **Review** to review all instance details.
+9. Select **Create Instance** to create your PostgreSQL database.
+10. Navigate to your newly crated instance to the **Details** menu.
+11. Copy the **Database URL** and save it for later.
+
+### Cloudinary
+
+1. Sign up or login to [Cloudinary](https://console.cloudinary.com/)
+2. Navigate to the **Dashboard**.
+3. Copy the **API Environment Variable** and save it for later.
+
+### Heroku
+
+1. Sign up or Login to [Heroku](https://id.heroku.com/).
+2. In the Heroku dashboard, click **New** then **Create New App**.
+3. Name the project. In this case the project was called **craftmasters**.
+4. Select the region closest to you. I selected **EU** for this project.
+5. Select **Create App**.
+6. Navigate to the **Settings** tab.
+7. Open the **Config Vars** section and add ```DATABASE_URL``` to the KEY field.
+8. Add the copied url from the database into the VALUE field.
+9. Click **Add**.
+10. Perform steps 7 - 9 with the **Cloudinary API** setting the KEY field to ```CLOUDINARY_URL``` and VALUE field to the api environment variable.
+11. Add the following **Config Vars**: ```PORT: 8000``` & ```DISABLECOLLECT_STATIC: 1```. These config vars are necessary for the project to deploy correctly; however, 'DISABLECOLLECT_STATIC' must be removed prior to final deployment.
+
+### Development Environment
+
+1. Inside the **Django App Repository**, create a new file called ```env.py```.
+2. In this file, import the **os** library.
+3. Set the default environment variables for the **Database** & **Cloudinary** urls that we added to heroku. 
+
+These variables should be in this format;
+
+```python
+os.environ.setdefault('DATABASE_URL', 'postgres://database url')
+os.environ.setdefault('CLOUDINARY_URL', 'cloudinary://cloudinary url')
+```
+
+4. Add a **Secret Key** in the same format. The secret key should be unique and not shared. e.g;
+
+```python
+os.environ.setdefault('SECRET_KEY', 'your_secret_key_here')
+```
+
+5. In the ```settings.py``` file in the django app, add the following code at the top of the file;
+
+```python
+from pathlib import Path
+import os
+import dj_database_url
+if os.path.isfile('env.py'):
+    import env
+```
+
+6. Remove the existing default **secret key** in the settings.py file.
+7. Replace that line with the following code;
+
+```python
+SECRET_KEY = os.environ.get('SECRET_KEY')
+```
+
+8. Replace the datases section with the following code;
+
+```python
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+```
+
+9. In the terminal, **migrate** the models over to the new database connection.
+10. Add the **Cloudinary Libraries** to the list of ```INSTALLED_APPS``` in the following order, 
+    - ```cloudinary_storage```
+    - ```django.contrib.staticfiles```
+    - ```cloudinary```
+11. In the settings file add the following code to link the app to **cloudinary**
+
+```python
+STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+```
+
+12. Link the file to the **templates directory** by adding;
+
+```python
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+```
+
+13. Change the templates **DIRS** value to;
+
+```py
+TEMPLATES = [
+    'DIRS': [TEMPLATES_DIR],
+    ]
+```
+
+14. Add the Heroku deployed link to the Django ```ALLOWED_HOSTS``` list. The format should be the Heroku app name followed by .herokuapp.com.
+15. Create a new file called **Procfile** at the top level directory.
+16. Within the Procfile, add the code ```web: gunicorn PROJECT_NAME.wsgi```. This code is necessary for heroku to deploy correctly.
+17. Create a **requirements.txt** file specifying what python packages are required to work the project and run: ```pip3 freeze --local > requirements.txt``` in the terminal.
+18. Commit changes and push them to **GitHub**.
+
+### Heroku
+
+1. Add the ```SECRET_KEY``` KEY and VALUE to the **Config Vars**.
+2. Go to **Deployment method**, under the "Deploy" tab select "GitHub" and click on **Connect to GitHub**.
+3. Go to "Connect to GitHub" section and **Search the Repository** to be deployed.
+4. Click **Connect** next the repository name.
+5. Choose **Automatic deploys** or **Manual deploys** to deploy your application.
+6. Watch the **Build Logs** for any errors.
+7. Heroku will now build the app. Once it has completed the build process you will see a **Your App Was Successfully Deployed** message and a link to the app to visit the live site.
