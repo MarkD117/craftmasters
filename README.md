@@ -391,3 +391,22 @@ Profile pictures can show up beside comments left on project posts, and when cli
 ### Project Image Slider/Rotator
 
 As previously mentioned in the [database structure](#database-structure) setion of the readme. The project_images cloudinary field was removed from the model. This was due to the summernote text editor allowing users to upload images directly into the content field. This option could be added back to allow the author to show a gallery of images of the project in one location. My initial thought process for this was to display the images as a slider or carousel, allowing the reader to slide through the images of the full project.
+
+## Technologies Used
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) was used to create the structure of the webpages and the base templating language.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) was used to add custom styles when designing and styling the layout of the site.
+- [Python3](https://en.wikipedia.org/wiki/Python_(programming_language)) was used to create the logic for the project.
+- [Django](https://www.djangoproject.com/) framework used to build the entire project.
+- [Bootstrap v5.0.2](https://getbootstrap.com/docs/5.0/getting-started/introduction/) used as a base front end framework that works alongside Django.
+- [Font Awesome](https://fontawesome.com/) used to include icons on the project pages and in the footer.
+- [Jinja Templating with Django](https://docs.djangoproject.com/en/4.2/topics/templates/#support-for-template-engines) used to render the logic within the html files and make the website more dynamic.
+- [Lucid Chart](https://www.lucidchart.com/) used to database structure model.
+- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) used to control the rendering behaviour of the django forms.
+- [Django Summernote](https://github.com/summernote/django-summernote) used to add a rich text editor to the site.
+- [ElephantSQL](https://www.elephantsql.com/) used as a PostgreSQL database for the project during development and in production.
+- [Coudinary](https://cloudinary.com/) used to host the static files for the project.
+- [Git](https://www.atlassian.com/git/tutorials/what-is-git) used for version control.
+- [GitHub](https://github.com/) used to store site source code.
+- [GitPod](https://gitpod.io/) used as a cloud-based IDE for developing the site.
+- [Heroku](https://id.heroku.com/) used to deploy the project.
