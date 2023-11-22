@@ -623,3 +623,27 @@ TEMPLATES = [
 5. Choose **Automatic deploys** or **Manual deploys** to deploy your application.
 6. Watch the **Build Logs** for any errors.
 7. Heroku will now build the app. Once it has completed the build process you will see a **Your App Was Successfully Deployed** message and a link to the app to visit the live site.
+
+### Forking The Repository
+
+By forking the GitHub Repository, you can create a copy of the original repository to view or modify without impacting the original.
+
+The steps to do this are as follows: 
+
+1.  Sign up or Login to [GitHub](https://github.com/)
+2. Go to the repository which can be accessed [here](https://github.com/MarkD117/craftmasters). 
+3.  At the top of the repository, on the right side of the page, select **Fork**.
+4.  A copy of the project repository should now be created as your own repository.
+
+### Create Repository Clone
+
+Making a clone allows you to make a duplicate of the repository at that moment in time, allowing you to execute a local copy of the project: 
+
+This can be accomplished by the following steps:
+
+1.   Navigate to the project [repository](https://github.com/MarkD117/craftmasters)
+2.   Click the dropdown arrow on the green code button at the top of code files.
+3.   **Copy the URL** provided by the clone by https option to the clipboard.
+4.   Navigate to your preferred code editor and change the directory within the terminal to the location where you wish to clone the repository.
+5.   Type ```git clone``` and paste the https link you copied from github.
+6.   Press **Enter** and git will clone the repository to your local machine.
