@@ -616,10 +616,10 @@ TEMPLATES = [
 
 ### Heroku
 
-1. Add the ```SECRET_KEY``` KEY and VALUE to the **Config Vars**.
-2. Go to **Deployment method**, under the "Deploy" tab select "GitHub" and click on **Connect to GitHub**.
-3. Go to "Connect to GitHub" section and **Search the Repository** to be deployed.
-4. Click **Connect** next the repository name.
-5. Choose **Automatic deploys** or **Manual deploys** to deploy your application.
-6. Watch the **Build Logs** for any errors.
-7. Heroku will now build the app. Once it has completed the build process you will see a **Your App Was Successfully Deployed** message and a link to the app to visit the live site.
+12. Add the ```SECRET_KEY``` KEY and VALUE to the **Config Vars**.
+13. Go to **Deployment method**, under the "Deploy" tab select "GitHub" and click on **Connect to GitHub**.
+14. Go to "Connect to GitHub" section and **Search the Repository** to be deployed.
+15. Click **Connect** next the repository name.
+16. Choose **Automatic deploys** or **Manual deploys** to deploy your application.
+17. Watch the **Build Logs** for any errors.
+18. Heroku will now build the app. Once it has completed the build process you will see a **Your App Was Successfully Deployed** message and a link to the app to visit the live site.
