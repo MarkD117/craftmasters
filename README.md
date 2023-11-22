@@ -450,3 +450,11 @@ class CategoryPage(View):
 # urls.py
 path('category/<str:cat_name>/', views.CategoryPage.as_view(), name='category'),
 ```
+
+### Add Project Form Image Bug
+
+During the development of the add project feature, I ran into a bug with the ```title_image```. When trying to submit the form, for some unknown reason, the image file would always revert to the placholder image. I had a look in the browser console to see if I could spot any errors or information guiding me to the solution to the issue. I found a warning noting that the form was missing 'enctype=multipart/form-data'. I though the issue was solved and I could go back to working on the feature.
+
+To my dismay, the image was still not uploading and was again, defaulting to the placholder image. I investigated for a good while into what was causing this bug, yet with no error messages or inclination to what was going wrong, I was stumped. I tried many things to fix this issue such as changing the database constraints, logging messages throughout the code to test it and even completely remigrating the database.
+
+After a long time of troubleshooting, I found that I forgot to include ```request.FILES``` when creating the form instance. It was a very bittersweet moment fixing this error as it took longer than I would like to admit to find and solve. That said, once this fix was implemented, the image file uploaded correctly.
