@@ -4,7 +4,7 @@ Welcome to Craft Masters, a vibrant online community where woodworking enthusias
 
 Whether you're a seasoned woodworker with years of experience or a newcomer eager to explore the world of woodworking, Craft Masters is your haven. Join in on this creative journey, where each project is a masterpiece and every craftsperson is a master in their own right. Let the sawdust fly and the creativity flourish – welcome to Craft Masters, where the beauty of woodworking knows no bounds.
 
-The live project can be accessed [here]()
+The live project can be accessed [here](https://craftmasters-9a4302546efa.herokuapp.com/)
 
 <p align="center">
     <img src="documentation/am-i-responsive-image.png"/>
