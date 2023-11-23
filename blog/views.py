@@ -2,9 +2,9 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect, Http404
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Category, Project
+from .models import Category, Project, Comment
 from .forms import CommentForm, AddProjectForm, UpdateProjectForm
 
 
@@ -45,6 +45,29 @@ class ProjectDrafts(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         return Project.objects.filter(author=self.request.user, status=0).order_by('-created_on')
+
+# Function to check if a user is admin
+def is_admin(user):
+    return user.is_superuser
+
+# decorator used to confirm that the user is an admin
+@user_passes_test(is_admin)
+def UnapprovedComments(request):
+    # Gets all unapproved comments to pass to template
+    unapproved_comments = Comment.objects.filter(approved=False)
+    return render(request, 
+    'unapproved_comments.html', {'unapproved_comments': unapproved_comments})
+
+
+@user_passes_test(is_admin)
+def ApproveComment(request, comment_id):
+    # Gets comment to approve
+    comment = get_object_or_404(Comment, id=comment_id)
+    # Sets approval value to true
+    comment.approved = True
+    # Saves approved comment
+    comment.save()
+    return redirect('unapproved_comments')
 
 
 @login_required

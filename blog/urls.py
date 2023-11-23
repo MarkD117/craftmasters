@@ -15,4 +15,6 @@ urlpatterns = [
     path('projects/<slug:slug>/edit/', views.UpdateProject, name='update_project'),
     path('projects/<slug:slug>/delete/', views.DeleteProject, name='delete_project'),
     path('drafts/', views.ProjectDrafts.as_view(), name='project_drafts'),
+    path('unapproved-comments/', views.UnapprovedComments, name='unapproved_comments'),
+    path('approve-comment/<int:comment_id>/', views.ApproveComment, name='approve_comment'),
 ]
