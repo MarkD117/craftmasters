@@ -32,10 +32,12 @@
                     {{ project.content | safe }}
                 </p>
                 {% if request.user == project.author or request.user.is_superuser %}
-                <button type="button" class="btn btn-primary"><a class="text-white text-decoration-none" href="{% url 'update_project' slug=project.slug %}">Edit</a></button>
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteProjectModal">
-                    Delete
-                </button>
+                <div class="mb-3">
+                    <button type="button" class="btn btn-primary"><a class="text-white text-decoration-none" href="{% url 'update_project' slug=project.slug %}">Edit</a></button>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteProjectModal">
+                        Delete
+                    </button>
+                </div>
                 {% endif %}
 
                 <!-- Confirm Deletion Modal -->
