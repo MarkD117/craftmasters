@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark nav-bg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Craft Masters</a>
@@ -32,51 +31,71 @@
                         <a class="nav-link {% block home_active %}{% endblock %}" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% block projects_active %}{% endblock %}" href="{% url 'projects' %}">Projects</a>
+                        <a class="nav-link {% block projects_active %}{% endblock %}"
+                            href="{% url 'projects' %}">Projects</a>
                     </li>
                     {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link {% block project_drafts_active %}{% endblock %}" href="{% url 'project_drafts' %}">Drafts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% block project_drafts_active %}{% endblock %}"
+                            href="{% url 'project_drafts' %}">Drafts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
                     {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    </li>
                     {% endif %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link {% block categories_active %}{% endblock %} dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link {% block categories_active %}{% endblock %} dropdown-toggle" href="#"
+                            id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Categories
                         </a>
                         <!-- Drop down menu for categories -->
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <!-- Lists all categories except uncategorized -->
                             {% for category in categories %}
-                                {% if category.category_name != 'uncategorized' %}
-                                    <li><a class="dropdown-item" href="{% url 'category' category.category_name %}">{{ category.category_name }}</a></li>
-                                {% endif %}
+                            {% if category.category_name != 'uncategorized' %}
+                            <li><a class="dropdown-item"
+                                    href="{% url 'category' category.category_name %}">{{ category.category_name }}</a>
+                            </li>
+                            {% endif %}
                             {% endfor %}
                         </ul>
                     </li>
                 </ul>
                 {% if user.is_authenticated %}
                 <div class="d-flex">
-                    <button type="button" class="btn search-btn"><a class="text-reset text-decoration-none" href="{% url 'add_project' %}">Add Project</a></button>
+                    <button type="button" class="btn search-btn"><a class="text-reset text-decoration-none"
+                            href="{% url 'add_project' %}">Add Project</a></button>
                 </div>
                 {% endif %}
             </div>
         </div>
     </nav>
 
+    <!-- message alerts -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
     <main>
         {% block content %}
-        <!-- Content Goes here -->
+        <!-- Site Content -->
         {% endblock content %}
     </main>
 
@@ -95,17 +114,19 @@
                             Join our woodworking community and explore the artistry of woodcraft. Connect with fellow
                             artisans, find inspiration, and embark on your crafting journey. Crafted with love and
                             passion for woodworking. Happy crafting!
-                        </p>         
+                        </p>
                     </div>
                     <!-- column 2 -->
                     <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
                         <h5 class="text-uppercase mb-4 pb-1">Helpful Links</h5>
                         <ul class="fa-ul">
                             <li class="nav-item mb-3">
-                                <a class="footer-link" aria-label="home" aria-current="page" href="{% url 'home' %}">Home</a>
+                                <a class="footer-link" aria-label="home" aria-current="page"
+                                    href="{% url 'home' %}">Home</a>
                             </li>
                             <li class="nav-item mb-3">
-                                <a class="footer-link" aria-label="projects" aria-current="page" href="{% url 'projects' %}">Projects</a>
+                                <a class="footer-link" aria-label="projects" aria-current="page"
+                                    href="{% url 'projects' %}">Projects</a>
                             </li>
                             <li class="nav-item dropdown mb-3">
                                 <a class="footer-link dropdown-toggle" href="#" id="footerDropdown" role="button"
@@ -114,9 +135,11 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="footerDropdown">
                                     {% for category in categories %}
-                                        {% if category.category_name != 'uncategorized' %}
-                                            <li><a class="dropdown-item" href="{% url 'category' category.category_name %}">{{ category.category_name }}</a></li>
-                                        {% endif %}
+                                    {% if category.category_name != 'uncategorized' %}
+                                    <li><a class="dropdown-item"
+                                            href="{% url 'category' category.category_name %}">{{ category.category_name }}</a>
+                                    </li>
+                                    {% endif %}
                                     {% endfor %}
                                 </ul>
                             </li>
@@ -128,11 +151,13 @@
                         <ul class="fa-ul">
                             <li class="mb-3">
                                 <p>Do you have any questions or suggestions?</p>
-                                <span class="footer-link" aria-label="email"><i class="fas fa-envelope"></i> info@craftmasters.com</span>
+                                <span class="footer-link" aria-label="email"><i class="fas fa-envelope"></i>
+                                    info@craftmasters.com</span>
                             </li>
                             <li class="mb-3">
                                 <p>Do you need assistance? Give us a call</p>
-                                <span class="footer-link" aria-label="phone number"><i class="fas fa-phone"></i> (057) 934 6000</span>
+                                <span class="footer-link" aria-label="phone number"><i class="fas fa-phone"></i> (057)
+                                    934 6000</span>
                             </li>
                         </ul>
                     </div>
@@ -169,18 +194,18 @@
                                     class="fab fa-google-plus-g"></i></a>
                         </div>
                     </div>
-                <!-- row end -->
+                    <!-- row end -->
                 </div>
-            <!-- footer sub container end -->
+                <!-- footer sub container end -->
             </div>
+            <!-- copyright notice -->
             <div class="text-center p-3 footer-copyright">
                 Craft Masters © 2023. All rights reserved.
-            <!-- footer main container end -->
+                <!-- footer main container end -->
             </div>
         </footer>
     </div>
-    <!-- copyright notice -->
-    
     <!-- /footer -->
 </body>
+
 </html>

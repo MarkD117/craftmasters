@@ -29,11 +29,27 @@ main {
     color: #fafafa;
   }
   
-  .search-btn:hover {
+.search-btn:hover {
     background-color: #252525;
     color: #f26749;
     border: 1px solid #f26749;
-  }
+}
+
+  /* ----- Messages ----- */
+
+.alert {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 800px;
+}
+
+main {
+    position: relative;
+}
 
 /* ----- hero image ----- */
 
