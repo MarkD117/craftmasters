@@ -39,6 +39,12 @@
                         <a class="nav-link {% block project_drafts_active %}{% endblock %}"
                             href="{% url 'project_drafts' %}">Drafts</a>
                     </li>
+                        {% if user.is_superuser %}
+                        <li class="nav-item">
+                            <a class="nav-link {% block unapproved_comments_active %}{% endblock %}"
+                                href="{% url 'unapproved_comments' %}">Comments</a>
+                        </li>
+                        {% endif %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
@@ -208,7 +214,7 @@
     <!-- End of Footer -->
     <!-- Script for closing messages -->
     <script>
-        setTimeout(function() {
+        setTimeout(function () {
             let messages = document.getElementById('msg');
             let alert = new bootstrap.Alert(messages);
             alert.close();
