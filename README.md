@@ -190,7 +190,6 @@ The Craft Masters site is a multi page site. All pages are accessible from the n
 <p align="center">
     <img src="documentation/features/mobile-nav.png"/>
     <img src="documentation/features/login-nav-mobile.png"/>
-    <img src="documentation/features/logout-nav.png"/>
 </p>
 
 ### Site Footer
@@ -224,7 +223,7 @@ If a new site user does not yet have an account, they can sign up using the regi
 If the user already has an account and wants to log back in, they can go to the login page. This page will allow them to enter their username and password to log into the site. They can also choose whether or not they want the site to remember their login. If the user accidentally goes to the login page, there is a small snippet of text informing them that if they have not created an account, they should sign up first. Included is a link the previously mentioned register page.
 
 <p align="center">
-    <img src="documentation/features/login-page"/>
+    <img src="documentation/features/login-page.png"/>
 </p>
 
 ### Logout Page
@@ -232,7 +231,7 @@ If the user already has an account and wants to log back in, they can go to the 
 When a user is already logged into the site they may want to log out. The logout page allows this functionality. When the logout nav link is clicked, the user is brought to the logout page. An onscreen prompt is shown asking the user if they want to sign out from the site. If the user clicks sign out, they are immediately logged out of the site.
 
 <p align="center">
-    <img src="documentation/features/logout-page"/>
+    <img src="documentation/features/logout-page.png"/>
 </p>
 
 ### **Home Page**
@@ -264,7 +263,7 @@ Below the about section are the lastest projects. In this section, any new posts
 ### **Projects Page**
 
 <p align="center">
-    <img src="documentation/features/projects-page.png"/>
+    <img src="documentation/features/project-page.png"/>
 </p>
 
 ### Project Cards
@@ -318,7 +317,7 @@ When a user clicks to read more about a post, they are redirected to the project
 The project banner holds a lot of information about the project. This includes the title of the project, the title image, author of the project and the date that the project was posted. This banner gives the user more information about the post that they are reading.
 
 <p align="center">
-    <img src="documentation/features/project-banner"/>
+    <img src="documentation/features/project-banner.png"/>
 </p>
 
 ### Project Content
@@ -369,7 +368,7 @@ When an admin user is logged in, the comments navigation link will appear in the
 I originally was going to add a confirmation message saying that the 'comment was approved successfully'; however, I opted not to as if there were multiple quick comments being approved, the messages could get messy and annoying.
 
 <p align="center">
-    <img src="documentation/features/comment-approvals.png"/>
+    <img src="documentation/features/comment-approval.png"/>
 </p>
 
 ### **Category Pages**
