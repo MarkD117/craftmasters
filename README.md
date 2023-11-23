@@ -171,22 +171,26 @@ During the planning stages, I  created wireframes for all pages of the site. [Ba
 
 </details>
 
+
 ## Features
 
 ### Navigation Menu
 
-The Craft Masters site is a multi page site. All pages are accessible from the nav bar located at the top of the site. The nav bar was built with bootstrap and customised to fit the needs of the site. The nav menu is fully responsive to both mobile and desktop layouts.
+The Craft Masters site is a multi page site. All pages are accessible from the nav bar located at the top of the site. The nav bar was built with bootstrap and customised to fit the needs of the site. The nav menu is fully responsive to both mobile and desktop layouts, sporting a custom stylised logo. There are navigation options that only appear after a user is logged in. For example, if the user is not logged in, they will see a register & login option. If the user is logged in, they will see a logout option, drafts and add project button. The 'comments' link is a navigation option only site admins will see and are permitted access.
 
 - Desktop
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/login-nav.png"/>
+    <img src="documentation/features/logout-nav.png"/>
 </p>
 
 - Mobile
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/mobile-nav.png"/>
+    <img src="documentation/features/login-nav-mobile.png"/>
+    <img src="documentation/features/logout-nav.png"/>
 </p>
 
 ### Site Footer
@@ -196,13 +200,13 @@ The site footer was built to provide the user with more information as well as t
 - Desktop
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/footer-desktop.png"/>
 </p>
 
 - Mobile
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/footer-mobile.png"/>
 </p>
 
 ### **Account Pages**
@@ -212,7 +216,7 @@ The site footer was built to provide the user with more information as well as t
 If a new site user does not yet have an account, they can sign up using the register page. On this page they are prompted to enter a username, optional e-mail, and password. Once the information is correctly entered, the user can click the sign up button and they will be automatically logged into the site and redirected to the home page.
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/signup-page.png"/>
 </p>
 
 ### Login Page
@@ -220,7 +224,7 @@ If a new site user does not yet have an account, they can sign up using the regi
 If the user already has an account and wants to log back in, they can go to the login page. This page will allow them to enter their username and password to log into the site. They can also choose whether or not they want the site to remember their login. If the user accidentally goes to the login page, there is a small snippet of text informing them that if they have not created an account, they should sign up first. Included is a link the previously mentioned register page.
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/login-page"/>
 </p>
 
 ### Logout Page
@@ -228,7 +232,7 @@ If the user already has an account and wants to log back in, they can go to the 
 When a user is already logged into the site they may want to log out. The logout page allows this functionality. When the logout nav link is clicked, the user is brought to the logout page. An onscreen prompt is shown asking the user if they want to sign out from the site. If the user clicks sign out, they are immediately logged out of the site.
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/logout-page"/>
 </p>
 
 ### **Home Page**
@@ -238,7 +242,7 @@ When a user is already logged into the site they may want to log out. The logout
 Below the nav bar is a large darkened image of a woodworking workshop to gently and immediately introduce the user to the purpose of the site. The hero image, also displays the name of the site.
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/hero-image.png"/>
 </p>
 
 ### About Section
@@ -246,7 +250,7 @@ Below the nav bar is a large darkened image of a woodworking workshop to gently 
 The about section of the home page, is a small introduction into what the site is, informing the user if the site is for them. It also serves as a warm welcome to the blog if the user decides to continue.
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/about.png"/>
 </p>
 
 ### Lastest Projects
@@ -254,13 +258,13 @@ The about section of the home page, is a small introduction into what the site i
 Below the about section are the lastest projects. In this section, any new posts will automatically be pushed to the front home page, allowing new posts to gain traction easily and reach new audiences. Each project card will be tagged with a 'NEW' label directing site users attention to the content. This also encourages bloggers to post new projects consistantly to be seen immediately on the first page of the site. There is also a clickable link that will bring the user to the projects page.
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/latest-projects.png"/>
 </p>
 
 ### **Projects Page**
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/projects-page.png"/>
 </p>
 
 ### Project Cards
@@ -268,7 +272,7 @@ Below the about section are the lastest projects. In this section, any new posts
 The projects page is the main page for displaying all of the projects that have been created by users. There are six cards on this page that will vary in size and orientation based on screen size. Each card has 7 individual features.
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/project-card.png"/>
 </p>
 
 #### Title Image
@@ -306,7 +310,7 @@ Upon hovering over the project title or description, the text colour and cursor 
 When a user clicks to read more about a post, they are redirected to the project detail page. This pages intent is to show the main content of the project that is written by the blogger. This page gives the highest amount of detail to other users and allows them to read the blog.
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/details-page.png"/>
 </p>
 
 ### Project Banner
@@ -314,7 +318,7 @@ When a user clicks to read more about a post, they are redirected to the project
 The project banner holds a lot of information about the project. This includes the title of the project, the title image, author of the project and the date that the project was posted. This banner gives the user more information about the post that they are reading.
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/project-banner"/>
 </p>
 
 ### Project Content
@@ -322,21 +326,21 @@ The project banner holds a lot of information about the project. This includes t
 Below the banner is the content of the project. The author of the project can enter all the information of what their project is about and it will be displayed here. Images can also be added to the content using the [Summernote Editor](https://github.com/summernote/django-summernote). More info about the editor will be mentioned in the add project form.
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/project-content.png"/>
 </p>
 
 ### Edit & Delete Buttons
 
-If the site user is logged in and is the original author of the post, the edit and delete buttons will appear. The edit button is used to change any and all details of the project. When clicked, it will direct the user to a form that is prepopulated with the data of the existing project post. When the neccessary modifications have been made, the user can submit the form and the changes will be logged to the database. They will also be redirected to the detailed view of their updated project.
+If the site user is logged in and is the original author of the post, the edit and delete buttons will appear. The edit button is used to change any and all details of the project. When clicked, it will direct the user to a form that is prepopulated with the data of the existing project post. When the neccessary modifications have been made, the user can submit the form and the changes will be logged to the database. They will also be redirected to the detailed view of their updated project. Admin users can see these buttons below every post and are permitted to edit and delete any post on the site.
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/edit-delete-btns.png"/>
 </p>
 
 When the delete button is clicked, a modal will appear asking for confirmation that the user does actually want to delete the post in question. This prevents the user from accidentally deleting their post.
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/delete-modal.png"/>
 </p>
 
 ### Like & Comments counter
@@ -344,15 +348,28 @@ When the delete button is clicked, a modal will appear asking for confirmation t
 Below the project content are the like button and comment counter. The function of these features is quite simple, when a user is logged in, they may click the like button to add a like to the project. This will change the style of the button and increase the counter. The counter change will be reflected everywhere on the site. The comment counter works in a similar fashion. When a comment is left on the project, the counter increases.
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/like-comment-counter.png"/>
 </p>
 
 ### Comments Section
 
 At the bottom of the project detail page is the comments section. Users are prompted to leave a comment on the project to encourage discussion about different crafts. It is also a platform to talk with the author of the post directly. When leaving a comment, the users username is shown alongside the amount of time that has passed since the comment was left. The body of the comment is shown below that information. Oldest comments appear first so there is an element of a conversation back and forth being had the further down you scroll.
 
+When a comment is added by a user, a message pops up telling them that their comment is awaiting approval. A site admin must personally approve all comments left on the projects to prevent malicious content and ensure that the site is a safe space for conversation. If there are not comments, muted text will appear prompting the user to add a comment.
+
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/comments-section.png"/>
+    <img src="documentation/features/no-comments.png"/>
+</p>
+
+### Comment Approvals
+
+When an admin user is logged in, the comments navigation link will appear in the nav bar. This page is where a site admin can approve comments left on the projects. In this panel, the admin can see the project the comment was left on, the commenters name and what the comment says. Using this information, the admin can decided whether to approve the comment to be shown the the comments section.
+
+I originally was going to add a confirmation message saying that the 'comment was approved successfully'; however, I opted not to as if there were multiple quick comments being approved, the messages could get messy and annoying.
+
+<p align="center">
+    <img src="documentation/features/comment-approvals.png"/>
 </p>
 
 ### **Category Pages**
@@ -362,18 +379,38 @@ In the site nav bar, there is a dropdown option for the various categories of th
 If a category that is assigned to a certain post gets deleted. The posts category will default to 'uncategorized'. This is to prevent posts from being deleted if a category gets deleted. The uncategorized category is hidden from the list of selectable options as it is only a failsafe for deleted categories. To reassign a category, the author can edit their post and select a new category.
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/features/category-page.png"/>
 </p>
 
 ### **Add/Edit Project Pages**
 
-The add project page allows the user to add a custom project to the site. Users are asked to enter a title, set a title image, select the category of project, write a short description and then write the content of the blog. The content field utilises the summernote editor allowing the author a plethora of tools to customise their own project content. 
+The add project page allows the user to add a custom project to the site. Users are asked to enter a title, set a title image, select the category of project, write a short description and then write the content of the blog. The content field utilises the summernote editor allowing the author a plethora of tools to customise their own project content. This also allows authors to upload their own images directly into the content field of the form. 
 
-This also allows authors to upload their own images directly into the content field of the form. The author field as well as the slug field are auto generated by the site. These fields are hidden from the user as they have no need to see them. The edit project page, is identical to the add project page; however, all the fields are prepopulated with the data of the post that has been selected to edit.
+The author field as well as the slug field are auto generated by the site. These fields are hidden from the user as they have no need to see them. The edit project page, is identical to the add project page; however, all the fields are prepopulated with the data of the post that has been selected to edit. Admins can edit all site posts. When an admin edits a post, the orginal author name of the post is unaffected
 
 <p align="center">
-    <img src="documentation/insert"/>
-    <img src="documentation/insert"/>
+    <img src="documentation/features/add-project-form.png"/>
+    <img src="documentation/features/edit-project-form.png"/>
+</p>
+
+### **Drafts**
+
+When creating a project, a user may opt to set the status of their post to 'Draft'. Setting the project status as draft will allow the user to finish the project later without uploading the unfinished project to the main site. From the drafts page, users can view all of their own drafts so they can have a full view of what they look like before finally publishing them. Currently dmins do not have the ability to look at drafted posts as drafted posts are not deployed to the main site. 
+
+That said, admins have the ability to set projects as drafts to temporarily remove them from the site without deleting them. Allowing admins to view all drafted posts is a feature that could be explored in the future. If a user does not have any drafted posts, muted text will appear informing them that nothing has gone wrong, they just do not currently have any drafted posts
+
+<p align="center">
+    <img src="documentation/features/drafts-page.png"/>
+</p>
+
+### **Message Feature**
+
+Django messages along with bootstrap alert styling was used to provide feedback to the user in the form of custom authentication messages when logging in and out of the site. As well as when creating, updating and deleting a post. A javaScript script is run to automatically dismiss the messages after 3 seconds so that the user is not required to do it manually.
+
+<p align="center">
+    <img src="documentation/features/add-project-msg.png"/>
+    <img src="documentation/features/update-project-msg.png"/>
+    <img src="documentation/features/delete-project-msg.png"/>
 </p>
 
 ## Future Features
