@@ -38,10 +38,10 @@
                 <div class="project-image-container">
                     <!-- Shows default image if there is no image available -->
                     {% if "placeholder" in project.title_image.url %}
-                    <img class="card-img-top project-card-image-top"
+                    <img class="card-img-top project-card-image-top" alt="stacks of logs"
                         src="{% static 'images/project-placeholder.jpeg' %}">
                     {% else %}
-                    <img class="card-img-top project-card-image-top" src=" {{ project.title_image.url }}">
+                    <img class="card-img-top project-card-image-top" alt="project title image" src=" {{ project.title_image.url }}">
                     {% endif %}
                     <div class="new-label rounded">
                         <p class="new-text text-center">NEW</p>

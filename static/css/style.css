@@ -306,8 +306,17 @@ ul.fa-ul{
     border: none;
 }
 
-/* ----- Auth pages ----- */
+/* ----- Authentication pages ----- */
 
+.auth-bg,
+.project-form-bg {
+    display: flex;
+    flex-direction: column;
+    min-height: 60vh;
+    background-color: #fafafa;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
 
 .auth-bg-img {
     background: url('/static/images/login-bg-img.jpg') center center fixed;
@@ -362,6 +371,10 @@ form.login > p > input {
 }
 
 /* ----- Project Forms ----- */
+
+.project-form-bg {
+    min-height: 100vh;
+}
 
 .project-form-bg-img {
     background: url('/static/images/project-form-bg.jpg') center center fixed;

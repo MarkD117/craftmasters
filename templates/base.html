@@ -91,8 +91,7 @@
                 <!-- Add project button -->
                 {% if user.is_authenticated %}
                 <div class="d-flex">
-                    <button type="button" class="btn search-btn"><a class="text-reset text-decoration-none"
-                            href="{% url 'add_project' %}">Add Project</a></button>
+                    <a class="btn search-btn text-decoration-none" href="{% url 'add_project' %}">Add Project</a>
                 </div>
                 {% endif %}
             </div>
@@ -122,7 +121,7 @@
     </main>
 
     <!-- footer -->
-    <div class="container-fluid mt-4 footer-bg">
+    <div class="container-fluid footer-bg">
         <footer class="text-black text-center text-lg-start bg-light">
             <!-- footer sub container start -->
             <div class="container p-4">
@@ -172,12 +171,12 @@
                         <ul class="fa-ul">
                             <li class="mb-3">
                                 <p>Do you have any questions or suggestions?</p>
-                                <span class="footer-link" aria-label="email"><i class="fas fa-envelope"></i>
+                                <span class="footer-link"><i class="fas fa-envelope"></i>
                                     info@craftmasters.com</span>
                             </li>
                             <li class="mb-3">
                                 <p>Do you need assistance? Give us a call</p>
-                                <span class="footer-link" aria-label="phone number"><i class="fas fa-phone"></i> (057)
+                                <span class="footer-link"><i class="fas fa-phone"></i> (057)
                                     934 6000</span>
                             </li>
                         </ul>
@@ -237,4 +236,5 @@
         }, 3000);
     </script>
 </body>
+
 </html>
