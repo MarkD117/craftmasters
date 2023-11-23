@@ -51,7 +51,8 @@ def is_admin(user):
     return user.is_superuser
 
 # decorator used to confirm that the user is an admin
-@user_passes_test(is_admin)
+# redirects user to home page if test not passed
+@user_passes_test(is_admin, login_url='')
 def UnapprovedComments(request):
     # Gets all unapproved comments to pass to template
     unapproved_comments = Comment.objects.filter(approved=False)
@@ -59,7 +60,7 @@ def UnapprovedComments(request):
     'unapproved_comments.html', {'unapproved_comments': unapproved_comments})
 
 
-@user_passes_test(is_admin)
+@user_passes_test(is_admin, login_url='')
 def ApproveComment(request, comment_id):
     # Gets comment to approve
     comment = get_object_or_404(Comment, id=comment_id)
