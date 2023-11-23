@@ -34,7 +34,7 @@ The main goal of the site is to allow users to upload their own opinions and pro
 ### Colour Scheme
 Initially, I didn't want the colour scheme to be too outlandish as I didn't want it to take away from the main content of the site, which are the project articles. For this reason, I decided to use quite mellow colours throughout the site. Generally I used a 'Seasalt' white for the site background and for any text elements on a darker background. An 'Eerie Black' Colour was used for the nav bar and footer to emphasise a harsh contrast between the site body and nav/footer. 
 
-A 'Tomato' red/orange was used for the site buttons and links as I felt an orange colour worked well with the theme of wood, being a lighter variation of brown. Most text elements on the site are in a 'Jet' grey colour as I feel it complements well against the seasalt background and is easier on the eyes compared to plain white & black. I also ued a 'Kelly Green' colour for the 'NEW' label on the site home page.
+A 'Tomato' red/orange was used for the site buttons and links as I felt an orange colour worked well with the theme of wood, being a lighter variation of brown. Most text elements on the site are in a 'Jet' grey colour as I feel it complements well against the seasalt background and is easier on the eyes compared to plain black & White. I also used a 'Kelly Green' colour for the 'NEW' label on the site home page.
 
 [Coolors.co](https://coolors.co/) was used to generate the images of the colour palettes below.
 
@@ -233,7 +233,7 @@ If the user already has an account and wants to log back in, they can go to the 
 When a user is already logged into the site they may want to log out. The logout page allows this functionality. When the logout nav link is clicked, the user is brought to the logout page. An onscreen prompt is shown asking the user if they want to sign out from the site. If the user clicks sign out, they are immediately logged out of the site.
 
 <p align="center">
-    <img src="documentation/features/logout-page.png"/>
+    <img src="documentation/features/signout-page.png"/>
 </p>
 
 ### **Home Page**
@@ -485,8 +485,8 @@ Each user story was carefully tested to ensure that the implemented features fun
 
 #### **Account Registration**
 
-| Item | Test | Expected Outcome | Result | 
-|--|--|--|--|
+| Test | Expected Outcome | Result | 
+|--|--|--|
 | Create account | User can successfully create an account | pass
 | Log into account | user can successfully log into account | pass
 | Log into account | success message appears | pass
@@ -523,7 +523,6 @@ Each user story was carefully tested to ensure that the implemented features fun
 | Edit Project Link | Only authors and admins can access edit link | pass
 | Like Project | Users cannot like post before logging in | pass
 | Comment | Users cannot leave comments before logging in | pass
-| Users cannot leave comments before logging in | pass
 
 #### **Home Page**
 
