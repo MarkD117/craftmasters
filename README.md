@@ -702,7 +702,15 @@ After a long time of troubleshooting, I found that I forgot to include ```reques
 
 ## Known Bugs
 
+### Occasional Operational Error
+
 There is currently an operational error that periodically appears preventing the server from running correctly. This error notes that there are too many connections to the database. The fix for this bug was to terminate the open connections to the database and the server runs perfectly fine. I was talking to my mentor about this and he said that it could just be existing connections that hadn't closed yet. This error only appeared when refreshing the page or making many changes in quick succession. That said, I am mentioning it in the readme in case the bug appears again.
+
+### Summernote Mobile Image Sizes
+
+As summernote allows users to upload images to the site, they can be of varying size. Because of this, on smaller layouts, the images do not scale. This causes the page width to increase which doesnt align with the other elements on the page. I investigated this bug and found a logged [issue](https://github.com/summernote/summernote/issues/262) to the summernote repository on GitHub. This issue notes that the images in the editor are of a fixed pixel width.
+
+A feature was added by a developer that allowed users to resize images in the editor and the issue was closed. This however, did not solve the problem. Resizing the images in the editor makes them smaller in total, not responsive. Making the images smaller will make them look worser for desktop and better for mobile. Making the images bigger, will make the images look better for desktop and worse for mobile. It's a catch 22 situation that I felt needed to be addressed in the readme.
 
 
 
