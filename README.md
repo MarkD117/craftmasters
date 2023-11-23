@@ -875,6 +875,58 @@ This can be accomplished by the following steps:
 5.   Type ```git clone``` and paste the https link you copied from github.
 6.   Press **Enter** and git will clone the repository to your local machine.
 
+## Credits
+
+| Source | Item |
+| --- | --- |
+| [Pexels](https://www.pexels.com/photo/bottle-equipment-factory-fix-280014/) | Hero Image |
+| [Pexels](https://www.pexels.com/photo/brown-firewood-122588/) | Placeholder Image |
+| [Pexels](https://www.pexels.com/photo/brown-logs-761535/) | Auth Bg Images |
+| [Unsplash](https://unsplash.com/photos/brown-and-black-metal-tool-4ixuPvOZr_M) | Form Bg Images |
+| [w3schools](https://www.w3schools.com/css/css_overflow.asp) | Overflow y scrollbar |
+| [w3schools](https://www.w3schools.com/cssref/pr_text_white-space.php) | Whitespace Normal |
+| [Django Docs](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/) | Date filters for changing date formats |
+| [StackOverflow](https://stackoverflow.com/questions/14972871/change-date-format-in-django) | Date filters for changing date formats |
+| [Toptal](https://www.toptal.com/designers/htmlarrows/) | Html arrows |
+| [w3schools](https://www.w3schools.com/css/css3_object-fit.asp) | object fit |
+| [w3schools](https://www.w3schools.com/django/ref_tags_block.php) | Setting active nav links dynamically |
+| [StackOverflow](https://stackoverflow.com/questions/50028673/changing-active-class-in-bootstrap-navbar-not-staying-in-inherited-django-templa) | Setting active nav links dynamically |
+| [StackOverflow](https://stackoverflow.com/questions/36950416/when-to-use-get-get-queryset-get-context-data-in-django) | Displaying category links as dropdowns on other pages |
+| [Django Docs](https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-display/) | Displaying category links as dropdowns on other pages |
+| [w3schools](https://www.w3schools.com/python/ref_func_super.asp) | Displaying category links as dropdowns on other pages |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/class-based-views/) | Django Class Based View docs |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView) | Django Detail View docs |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-display/#django.views.generic.list.ListView) | Django List View docs |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/http/urls/#how-django-processes-a-request) | Django Path Converters |
+| [DjangoDocs](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#date) | Django timesince documentation |
+| [Django Docs](https://docs.djangoproject.com/en/4.2/howto/custom-template-tags/) | Django safe filter docs |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/class-based-views/generic-display/#listview) | object_list variable getting projects for home page |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/db/queries/#limiting-querysets) | Queryset slicing – getting last 4 projects for home page |
+| [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/index.html) | crispy forms |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/ref/csrf/) | CSRF documentation |
+| [StackOverflow](https://stackoverflow.com/questions/74603094/what-does-display-webkit-box-do-and-what-browsers-support-it) | display: webkit-box; - overflowing text with ellipsis |
+| [Django Docs](https://docs.djangoproject.com/en/4.2/ref/forms/widgets/) | Add Project form - Django widgets documentation |
+| [StackOverflow](https://stackoverflow.com/questions/22388281/what-does-exclude-in-the-meta-class-of-django-mean) | Meta exclude |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/forms/) | Django forms |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/forms/modelforms//) | Model forms |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/http/views/) | Django Views Documentation |
+| [Summernote](https://django-summernote.readthedocs.io/en/latest/#django_summernote.widgets.SummernoteWidget) | Summernote Docs |
+| [Summernote](https://github.com/summernote/django-summernote) | Summernote github repo |
+| [CodeFellows](https://codefellows.github.io/sea-python-401d7/lectures/django_security.html) | Django auth decorators |
+| [StackOverflow](https://stackoverflow.com/questions/53594745/what-is-the-use-of-cleaned-data-in-django) | cleaned_data |
+| [Django Docs](https://docs.djangoproject.com/en/4.2/topics/http/file-uploads/) | request.FILES form image fix |
+| [Bootstrap](https://getbootstrap.com/docs/5.0/components/modal/) | bootstrap modal |
+| [StackOverflow](https://stackoverflow.com/questions/61657061/how-do-i-resize-the-width-of-summernote) | Summernote resize |
+| [Django Docs](https://docs.djangoproject.com/en/3.2/topics/http/views/#the-http404-exception) | Django http404 checking if user is author or superuser |
+| [StackOverflow](https://stackoverflow.com/questions/47703974/i-cant-set-labels-in-django-forms-fields) | Setting custom form labels |
+| [StackOverflow](https://stackoverflow.com/questions/47244036/using-django-login-required-mixin) | login required mixin |
+| [CodeInstitute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/ae7923cfce7f4653a3af9f51825d2eba/) | Messages Integration |
+| [StackOverflow](https://stackoverflow.com/questions/25982135/why-does-left-50-transform-translatex-50-horizontally-center-an-element) | Horizontally center an element |
+| [WIX](https://www.wix.com/logo/maker) | Logo Creation |
+| [FineWoodWorking](https://www.finewoodworking.com/) | Woodworking articles |
+| [Craftsy](https://www.craftsy.com/) | Woodworking articles |
+| [DIYUniversity](https://diyuniversity.com/index) | Woodworking articles |
+| [stryicarvingtools](https://stryicarvingtools.com/) | Woodworking articles |
 
 ## Acknowledgements 
 
