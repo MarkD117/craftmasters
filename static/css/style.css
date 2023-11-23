@@ -133,12 +133,8 @@ ul.fa-ul{
     margin-left: 0;
 }
 
-/* .light-grey-text, li > p {
-    color: #4c4e52;
-} */
-
 .open-hours{
-    color: e8e8e8;
+    color: #e8e8e8;
     font-weight: 600;
 }
 
@@ -498,11 +494,3 @@ form.login > p > input {
     }
     
 }
-/* 
-@media (max-width: 375px) {
-
-    p > input {
-        width: 250px;
-    }
-    
-} */
