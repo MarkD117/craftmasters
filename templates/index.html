@@ -28,7 +28,8 @@
     <h2 class="heading-space text-center">Latest Projects</h2>
     <hr class="home-hr">
     <p class="py-4 text-center">
-        Take a look at some of our newest posts! Head to the <a class="link" href="{% url 'projects' %}">Projects</a> page to view more!
+        Take a look at some of our newest posts! Head to the <a class="link" href="{% url 'projects' %}">Projects</a>
+        page to view more!
     </p>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
         {% for project in object_list %}
@@ -48,7 +49,7 @@
                 </div>
                 <!-- url allows users to open specific post in the detailed post view -->
                 <a href="{% url 'project_detail' project.slug %}" class="project-link">
-                    <h2 class="card-title project-title">{{ project.title }}</h2>
+                    <h2 class="card-title project-title fw-bold">{{ project.title }}</h2>
                     <p class="card-text project-description scroll">{{ project.description }}</p>
                 </a>
                 <p class="mb-0 ms-2 mt-1">
