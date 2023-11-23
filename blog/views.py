@@ -11,7 +11,7 @@ from .forms import CommentForm, AddProjectForm, UpdateProjectForm
 class LandingPage(generic.ListView):
     model = Project
     # Retrieves latest 4 projects in database
-    queryset = Project.objects.filter(status=1).order_by('-created_on')[:4]  
+    queryset = Project.objects.filter(status=1).order_by('-created_on')[:4]
     template_name = 'index.html'
 
 
@@ -24,7 +24,13 @@ class CategoryPage(View):
             category=category,
             status=1  # Exclude draft posts by filtering based on status
         )
-        return render(request, 'categories.html', {'cat_name': cat_name, 'project_category': project_category})
+        return render(
+            request,
+            'categories.html',
+            {
+                'cat_name': cat_name,
+                'project_category': project_category}
+            )
 
 
 class ProjectList(generic.ListView):
@@ -44,11 +50,14 @@ class ProjectDrafts(LoginRequiredMixin, generic.ListView):
     paginate_by = 6
 
     def get_queryset(self):
-        return Project.objects.filter(author=self.request.user, status=0).order_by('-created_on')
+        return Project.objects.filter(
+            author=self.request.user, status=0).order_by('-created_on')
+
 
 # Function to check if a user is admin
 def is_admin(user):
     return user.is_superuser
+
 
 # decorator used to confirm that the user is an admin
 # redirects user to home page if test not passed
@@ -56,8 +65,9 @@ def is_admin(user):
 def UnapprovedComments(request):
     # Gets all unapproved comments to pass to template
     unapproved_comments = Comment.objects.filter(approved=False)
-    return render(request, 
-    'unapproved_comments.html', {'unapproved_comments': unapproved_comments})
+    return render(request,
+                  'unapproved_comments.html',
+                  {'unapproved_comments': unapproved_comments})
 
 
 @user_passes_test(is_admin, login_url='')
@@ -100,10 +110,13 @@ def UpdateProject(request, slug):
     if request.user == project.author or request.user.is_superuser:
         if request.method == 'POST':
             # Getting updated form
-            form = UpdateProjectForm(request.POST, request.FILES, instance=project)
+            form = UpdateProjectForm(
+                    request.POST, request.FILES, instance=project)
             if form.is_valid():
                 form.save()
-                messages.info(request, 'Your project was updated successfully!')
+                messages.info(
+                    request, 'Your project was updated successfully!'
+                    )
                 # Redirects to updated project page
                 return redirect('project_detail', slug=project.slug)
         else:
@@ -122,7 +135,7 @@ def UpdateProject(request, slug):
 def DeleteProject(request, slug):
     # Retrieving project instance to delete
     project = get_object_or_404(Project, slug=slug)
-    
+
     # Checks if logged-in user is author or a superuser
     if request.user == project.author or request.user.is_superuser:
         if request.method == 'POST':
@@ -150,7 +163,8 @@ class ProjectDetail(View):
 
         if request.user == project.author or request.user.is_superuser:
             # Gets comments of the project ordered by oldest 1st
-            comments = project.comments.filter(approved=True).order_by('created_on')
+            comments = project.comments.filter(
+                approved=True).order_by('created_on')
             liked = False
             # If the user id exists to say a user has liked
             # the project, the liked value will be set to True
@@ -175,7 +189,8 @@ class ProjectDetail(View):
         elif project.status == 0:
             raise Http404("You don't have permission to view this project.")
         else:
-            comments = project.comments.filter(approved=True).order_by('created_on')
+            comments = project.comments.filter(
+                approved=True).order_by('created_on')
             liked = False
             if project.likes.filter(id=self.request.user.id).exists():
                 liked = True
@@ -191,11 +206,12 @@ class ProjectDetail(View):
                     'comment_form': CommentForm(),
                 },
             )
-    
+
     def post(self, request, slug, *args, **kwargs):
         queryset = Project.objects.filter(status=1)
         project = get_object_or_404(queryset, slug=slug)
-        comments = project.comments.filter(approved=True).order_by('created_on')
+        comments = project.comments.filter(
+            approved=True).order_by('created_on')
         liked = False
         if project.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -203,13 +219,13 @@ class ProjectDetail(View):
         # Gets all of the data from the comment form
         comment_form = CommentForm(data=request.POST)
 
-        # is.valid() checks if information 
+        # is.valid() checks if information
         # has been submitted to the form.
         if comment_form.is_valid():
             # sets email and username automatically
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
-            # saves comment but does not commit 
+            # saves comment but does not commit
             # until a post is assigned to it.
             comment = comment_form.save(commit=False)
             comment.project = project
@@ -231,8 +247,9 @@ class ProjectDetail(View):
             },
         )
 
+
 class ProjectLike(View):
-    
+
     def post(self, request, slug):
         project = get_object_or_404(Project, slug=slug)
 
@@ -244,5 +261,6 @@ class ProjectLike(View):
             # add like if it does not exists
             project.likes.add(request.user)
 
-        # liking or unliking a project will reload the project_detail page and update the like
+        # liking or unliking a project will reload
+        # the project_detail page and update the like
         return HttpResponseRedirect(reverse('project_detail', args=[slug]))
