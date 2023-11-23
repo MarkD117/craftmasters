@@ -205,7 +205,15 @@
             </div>
         </footer>
     </div>
-    <!-- /footer -->
+    <!-- End of Footer -->
+    <!-- Script for closing messages -->
+    <script>
+        setTimeout(function() {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 3000);
+    </script>
 </body>
 
 </html>
