@@ -448,7 +448,183 @@ As previously mentioned in the [database structure](#database-structure) setion 
 - [GitPod](https://gitpod.io/) used as a cloud-based IDE for developing the site.
 - [Heroku](https://id.heroku.com/) used to deploy the project.
 
+## Testing
 
+### Code Validation
+
+[HTML W3C Validator](https://validator.w3.org) was used to validate the html code. No errors were found.
+
+[CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files. No errors were found. There were 8 warnings that do not affect the CSS code; however, they have been documented. 
+
+[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the python code. Again, no errors were found.
+
+For all validation images please navigate to [this](https://github.com/MarkD117/craftmasters/tree/main/documentation/validation-images) folder.
+
+### Browser Compatibility
+
+The site has been tested on the following browsers:
+- Google Chrome - ✔️
+- Mozilla FireFox - ✔️
+- Microsoft Edge - ✔️
+- iOS (Mobile) - ✔️
+- Android - ✔️
+
+### Lighthouse Testing
+
+Google lighouse testing gave the site a decent rating overall apart from the performance. This is due to the sheer amount of images that are loaded on the site by regular users.
+
+<p align="center">
+    <img src="documentation/lighthouse.png"/>
+</p>
+
+### Testing and Results
+
+Each user story was carefully tested to ensure that the implemented features functioned as expected. Because this project was driven by my own User Stories, I felt that manual testing should be performed on all logic code.
+
+#### **Account Registration**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Create account | User can successfully create an account | pass
+| Log into account | user can successfully log into account | pass
+| Log into account | success message appears | pass
+| Log out of account | user can successfully log out of account | pass
+| Log out of account | success message appears | pass
+
+#### **Navigation Tests**
+
+| Test | Expected Outcome | Result | 
+|--|--|--|
+| Logo | User can redirects to home page | pass
+| Home Link | User can redirects to home page | pass
+| Projects | User can navigate to projects page | pass
+| Drafts | User can navigate to drafts page | pass
+| Categories | User can navigate to all category pages | pass
+| Comments | Comments link only shows to admin users | pass
+| Comments | Admins can access comments page | pass
+| Comments | Normal users cannot access comments page | pass
+| Add Project | Redirects to add project form | pass
+
+#### **Footer Tests**
+
+| Test | Expected Outcome | Result | 
+|--|--|--|
+| Content | Content renders and displays correctly | pass
+| Nav links | Nav links are clickable and redirect to relevant pages | pass
+
+#### **Account Rules Test**
+
+| Test | Expected Outcome | Result | 
+|--|--|--|
+| Add Project Button | button only appears to users that are logged in | pass
+| Add Project Link | Users are requested to log in before adding post | pass
+| Edit Project Link | Only authors and admins can access edit link | pass
+| Like Project | Users cannot like post before logging in | pass
+| Comment | Users cannot leave comments before logging in | pass
+| Users cannot leave comments before logging in | pass
+
+#### **Home Page**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Content | Load page | All site content and images load correctly | pass
+| project cards | Load page | All card content is correct, is displayed and can be manipulated | pass
+| project cards | Click card | Cards are clickable and redirect to detail page | pass
+
+
+#### **Projects Page**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Content | Load page | All site content and images load correctly | pass
+| project cards | Load page | All card content is correct, is displayed and can be manipulated | pass
+| project cards | Click card | Cards are clickable and redirect to detail page | pass
+| project cards | Scroll Description | Description scrolls above 3 lines | pass
+| Card orientation | Change screen size | cards stay in 2 rows of three until 797px | pass
+| Project Images | Change screen size | Images change size to fit screen | pass
+| Pagination | Render 7 or more projects | Site paginates, pushes posts to another page and shows next button | pass
+| Next/Prev button | Click buttons | change relevant pages | pass
+
+#### **Categories Page**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Category Name | Select category | name of selected category appears at top of page | pass
+| Category Filter | Select category | projects with the selected category will appear only | pass
+| Content | Load page | All site content and images load correctly | pass
+| project cards | Load page | All card content is correct, is displayed and can be manipulated | pass
+| project cards | Click card | Cards are clickable and redirect to detail page | pass
+| project cards | Scroll Description | Description scrolls above 3 lines | pass
+| Card orientation | Change screen size | cards stay in 2 rows of three until 797px | pass
+| Project Images | Change screen size | Images change size to fit screen | pass
+| Pagination | Render 7 or more projects | Site paginates, pushes posts to another page and shows next button | pass
+| Next/Prev button | Click buttons | change relevant pages | pass
+
+#### **Drafts Page**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Draft message | Select drafts | If not drafts exist, paragraph shown | pass
+| Drafted Posts | Select drafts | posts that have the status of draft and belong to the logged in user load correctly | pass
+| Content | Load page | All site content and images load correctly | pass
+| project cards | Load page | All card content is correct, is displayed and can be manipulated | pass
+| project cards | Click card | Cards are clickable and redirect to detail page | pass
+| project cards | Scroll Description | Description scrolls above 3 lines | pass
+| Card orientation | Change screen size | cards stay in 2 rows of three until 797px | pass
+| Project Images | Change screen size | Images change size to fit screen | pass
+| Pagination | Render 7 or more projects | Site paginates, pushes posts to another page and shows next button | pass
+| Next/Prev button | Click buttons | change relevant pages | pass
+
+
+#### **Project Detail Page**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Content | Load page | All site content and images load correctly | pass
+| Edit/Delete Buttons | Displays correctly | User is author or admin | pass
+| Edit Button | Click Button | Redirects to update project form | pass
+| Delete Button | Click Button | Displays confirm delete modal | pass
+| Confirm Delete | Click confirm delete | Deletes chosen post | pass
+| Confirm Delete | Click confirm delete | Displays message. | pass
+| Like/comment counter | Updates correctly | Amount of likes and comments correctly calculated | pass
+| Like/comment counter | Displays correctly | Amount of likes and comments displays correctly | pass
+| Comments date | Leave comment | Date since comment displays correctly | pass
+| Comment | Submit comment | Comment submits successfully | pass
+| Comment | Submit comment | Approval message appears | pass
+
+#### **Add Project Page**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Content | Load page | All site content and images load correctly | pass
+| Form | Click add project | Form fields load correctly | pass
+| Summernote Editor | Click add project | Editor rendors and functions correctly | pass
+| Form fields | Enter data / submit form | All form data submits correctly | pass
+| title_image | submit empty image | Default image gets set | pass
+| Status field | submit draft | Post gets pushed to personal draft page | pass
+| Status field | submit published | Post gets pushed to main site pages | pass
+| Message | submit form | user redirected and message shown | pass
+
+#### **Update Project Page**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Content | Load page | All site content and images load correctly | pass
+| Form | Click edit button | Form fields load prepopulated with correct data | pass
+| Summernote Editor | Click add project | Editor rendors and functions correctly | pass
+| Form fields | Update data / submit form | All form data submits correctly | pass
+| Status field | submit draft | Post gets pushed to personal draft page | pass
+| Status field | submit published | Post gets pushed to main site pages | pass
+| Message | submit form | user redirected and message shown | pass
+
+#### **Comments Page**
+
+| Item | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Content | Load page | All site content load correctly | pass
+| Comment table | Load page | Table populates with comment info | pass
+| Comment approval | Click approve button | Comment removed from table and added to post | pass
+| Comment counter | Click approve button | Counter increases when comment is approved | pass
 
 ## Bug Fixes
 
@@ -457,7 +633,7 @@ As previously mentioned in the [database structure](#database-structure) setion 
 During the inital development stages of the categories. I needed to specifically define what happens if a category that is assigned to a project gets deleted. I decided on assigning an uncategorized value to any project whos category was deleted. This would prevent projects from producing errors as the category field value wouldn't exist and prevents projects from being accidentaly deleted.
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/set-default-bug.png"/>
 </p>
 
 I first tried to set the ```on_delete=models.SET_DEFAULT``` default value to ```'uncategorized'```. When testing this feature, I recieved a value error expecting an 'id'. After investigating this error further I found that on_delete looks for the id of the specific category. The way that I had initially configured this feature, was to set the category to a string value of 'uncategorized'.
@@ -483,7 +659,7 @@ category = models.ForeignKey(
 ### Category Filter Bug
 
 <p align="center">
-    <img src="documentation/insert"/>
+    <img src="documentation/category-filter-bug.png"/>
 </p>
 
 When developing the category filter feature, I recieved a Value error that expected and id yet recieved the category in the form of a string. In the CategoryPage view, I was trying to filter projects based on the category field, which is a ForeignKey to the Category model. However, I was passing the cat_name parameter, which is a string representing the name of the category.
@@ -528,9 +704,7 @@ After a long time of troubleshooting, I found that I forgot to include ```reques
 
 There is currently an operational error that periodically appears preventing the server from running correctly. This error notes that there are too many connections to the database. The fix for this bug was to terminate the open connections to the database and the server runs perfectly fine. I was talking to my mentor about this and he said that it could just be existing connections that hadn't closed yet. This error only appeared when refreshing the page or making many changes in quick succession. That said, I am mentioning it in the readme in case the bug appears again.
 
-<p align="center">
-    <img src="documentation/insert"/>
-</p>
+
 
 ## Deployment
 
