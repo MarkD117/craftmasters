@@ -471,7 +471,7 @@ The site has been tested on the following browsers:
 
 ### Lighthouse Testing
 
-Google lighouse testing gave the site a decent rating overall apart from the performance. This is due to the sheer amount of images that are loaded on the site by regular users.
+Google lighouse testing gave the site a decent rating overall apart from the performance. This is expected due to the sheer amount of images that are loaded on the site by regular users.
 
 <p align="center">
     <img src="documentation/lighthouse.png"/>
