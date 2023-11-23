@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block unapproved_comments_active %}active{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center mt-5 mb-4 fw-bold">Unapproved Comments</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Project</th>
+                <th>Commenter</th>
+                <th>Comment</th>
+                <th>Approval</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for comment in unapproved_comments %}
+            <tr>
+                <td>{{ comment.project.title }}</td>
+                <td>{{ comment.name }}</td>
+                <td>{{ comment.body }}</td>
+                <td>
+                    <form method="POST" action="{% url 'approve_comment' comment.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-success">Approve</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
