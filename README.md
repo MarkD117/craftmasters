@@ -6,7 +6,9 @@ Whether you're a seasoned woodworker with years of experience or a newcomer eage
 
 The live project can be accessed [here]()
 
-![Screenshot](documentation/)
+<p align="center">
+    <img src="documentation/am-i-responsive-image.png"/>
+</p>
 
 ## Index – Table of Contents
 
