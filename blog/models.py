@@ -41,7 +41,6 @@ class Project(models.Model):
     )
     description = models.TextField(blank=True)
     content = models.TextField()
-    project_images = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
