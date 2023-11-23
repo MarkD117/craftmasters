@@ -433,6 +433,7 @@ As previously mentioned in the [database structure](#database-structure) setion 
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) was used to create the structure of the webpages and the base templating language.
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) was used to add custom styles when designing and styling the layout of the site.
 - [Python3](https://en.wikipedia.org/wiki/Python_(programming_language)) was used to create the logic for the project.
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) used to add timeout function for messages
 - [Django](https://www.djangoproject.com/) framework used to build the entire project.
 - [Bootstrap v5.0.2](https://getbootstrap.com/docs/5.0/getting-started/introduction/) used as a base front end framework that works alongside Django.
 - [Font Awesome](https://fontawesome.com/) used to include icons on the project pages and in the footer.
