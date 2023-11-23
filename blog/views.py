@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect, Http404
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Category, Project
@@ -53,6 +54,7 @@ def AddProject(request):
         form = AddProjectForm(request.POST, request.FILES, user=request.user)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Your project was added successfully!')
             # Redirects to the project detail page for new project
             # Passes slug of instance as parameter
             return redirect('project_detail', slug=form.instance.slug)
@@ -77,6 +79,7 @@ def UpdateProject(request, slug):
             form = UpdateProjectForm(request.POST, request.FILES, instance=project)
             if form.is_valid():
                 form.save()
+                messages.info(request, 'Your project was updated successfully!')
                 # Redirects to updated project page
                 return redirect('project_detail', slug=project.slug)
         else:
@@ -100,6 +103,7 @@ def DeleteProject(request, slug):
     if request.user == project.author or request.user.is_superuser:
         if request.method == 'POST':
             project.delete()
+            messages.error(request, 'Your project was deleted successfully!')
             return redirect('projects')
         else:
             # Redirects to detail page if method is not 'POST'
