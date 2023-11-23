@@ -315,10 +315,9 @@ ul.fa-ul{
 }
 
 .auth-bg-img {
-    background: url('/static/images/login-bg-img.jpg') center center fixed;
+    background: url('https://res.cloudinary.com/dmgfjirpr/image/upload/v1700717468/static/images/login-bg-img.e09967da3bce.jpg') center center fixed;
     background-size: cover;
 }
-
 
 form.signup > p > input,
 form.login > p > input {
@@ -373,7 +372,7 @@ form.login > p > input {
 }
 
 .project-form-bg-img {
-    background: url('/static/images/project-form-bg.jpg') center center fixed;
+    background: url('https://res.cloudinary.com/dmgfjirpr/image/upload/v1700717466/static/images/project-form-bg.6c6292b80484.jpg') center center fixed;
     background-size: cover;
 }
 
